@@ -1,10 +1,10 @@
 # Git & GitHub
 **Configurando git por primera vez**
-## Inicializar Git en un directorio local
-## Flujo básico de Git
-## De master a main o cambio de nombre de una rama
-### Repositorios nuevos
-### Repositorios existentes
+**Inicializar Git en un directorio local**
+**Flujo básico de Git**
+** De master a main o cambio de nombre de una rama**
+_Repositorios nuevos_
+_Repositorios existentes_
 ### Reemplazar la rama master por main en GitHub
 ### Reemplazar la rama master por main en Git
 ## Archivo para ignorar archivos
