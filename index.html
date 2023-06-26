@@ -161,7 +161,8 @@
     <strong>git commit -m "mensaje descriptivo del cambio"</strong>
 
     # se agrega el origen remoto de tu repositorio de GitHub
-    git remote add origin https://github.com/usuario/repositorio.git
+    <strong>git remote add origin https://github.com/usuario/repositorio.git</strong>
+    <strong>git remote add origin https://github.com/l2v2blue/resumir_git.git</strong>
     # la primera vez que vinculamos el repositorio remoto con el local
     <strong>git push -u origin master</strong>
     # para las subsecuentes actualizaciones, sino cambias de rama
@@ -203,6 +204,10 @@
             >
           </p>
           <p>
+            Establecer la rama o cambiar de rama <br />$
+            <small><strong>git branch -M main</strong></small>
+          </p>
+          <p>
             Ejecución de push para subir o empujar los cambios hacia la branch
             (rama) del repositorio remoto, previamente se debe haber agregado el
             origen remoto del repositorio de GitHub en caso contrario agregar
@@ -210,9 +215,18 @@
             <small
               ><strong
                 >git remote add origin
-                https://github.com/usuario/repositorio.git</strong
+                https://github.com/nom_usuario/nom_repositorio.git</strong
               ></small
-            ><br />$ <small><strong>git push -u origin main</strong></small
+            ><br />La url se la obtiene de la cuenta github para el usuario y la
+            url amigable letras, numeros y guión medio unicamente.<br />$
+            <small
+              ><strong
+                >git remote add origin
+                https://github.com/l2v2blue/resumir_git.git</strong
+              ></small
+            >
+            <i> Particularizado</i><br /><br />$
+            <small><strong>git push -u origin main</strong></small
             ><br />$ <small><strong>git push </strong></small> para subsecuentes
             actualizaciones sino hay cambio de rema.
           </p>
