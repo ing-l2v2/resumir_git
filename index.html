@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git & GitHub</title>
+    <link rel="stylesheet" href="./assets/css/style-for-git.css" />
+    <link rel="stylesheet" href="./assets/css/git-index.css" />
+  </head>
+  <body>
+    <h1>Git & GitHub</h1>
+    <article>
+      <h2>Configurando Git por Primera vez</h2>
+      <section>
+        <pre><code>
+    git --version
+    git config --global user.name "Ing. Leonel Villa"
+    git config --global user.username "l2v2blue"
+    git config --global user.password "l2v2..2021"
+    git config --global user.email l2v2blue@gmail.com
+    git config --global user.ui true
+    git config --global init.defaultBranch main
+    git config --list
+    # asignar visual studio code como editor de configuración de git
+    git config --global core.editor "code --wait"
+    # Abre editor con configuracion generada y espara a que el editor cierre el archivo
+    git config --global -e
+    # para estandarizar los saltos de línea en windows
+    git config --global core.autocrlf true
+    # para estandarizar los saltos de línea en linux/mac
+    git config --global core.autocrlf input
+    # ver todas las opciones de la configuración en la terminal <strong>git &lt;comand&gt; -h</strong>
+    git config -h
+    # ver todas las opciones de la configuración en el navegador <strong>git help &lt;comand&gt;</strong>
+    git help config
+        </code></pre>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <h2>Inicializar Git en un directorio local</h2>
+      <section>
+        <pre><code>
+  mkdir carpeta
+  cd carpeta
+  touch README.md
+  touch .gitignore
+  # inicializar como proyecto para gestionar con git, generando un directorio oculto .git
+  git init
+  code .
+        </code></pre>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-card-row">
+        <div>
+          <h2>Flujo Básico</h2>
+          <p>
+            Flujo de Git, consta de tres estados locales y uno de forma remota
+            cuando accedemos al codigo centralizado:
+            <span class="strong"><i>modified</i></span
+            >, <span class="strong"><i>staged</i></span
+            >, <span class="strong"><i>committed</i></span> y
+            <span class="strong"><i>remote</i></span> a cada uno le corresponde
+            un área de trabajo.
+          </p>
+          <ol>
+            <li>
+              <span class="strong"><i>Working Directory:</i></span> Area
+              correspondiente al estado
+              <span class="strong"><i>modified</i></span
+              >, es la carpeta local de PC donde se almacenan los archivos del
+              proyecto.
+            </li>
+            <li>
+              <spam class="strong"><i>Staging Area</i></spam
+              >: Es el área correspondiente al estado
+              <span class="strong"><i>staged</i></span> también se le llama
+              index por que es el área donde git indexa y agrega los cambios
+              realizados en los archivos previos a comprometerlos en su
+              registro.
+            </li>
+            <li>
+              <spam class="strong"><i>Local Repository</i></spam
+              >: Es el área correspondiente al estado
+              <spam class="strong"><i>committed</i></spam
+              >, donde los cambios ya se han registrado en el repositorio de git
+              también se le llama <spam class="strong"><i>HEAD</i></spam> por
+              que indica en qué cambio se encuentra el puntero del repositorio.
+            </li>
+            <li>
+              <spam class="strong"><i>Remote Repository</i></spam
+              >: Es el área correspondiente al estado
+              <spam class="strong"><i>remote</i></spam> y es el directorio
+              remoto donde almacenamos los archivos del proyecto en alguna
+              plataforma web como GitHub, GitLab, BitBucket. Git denomina
+              <spam class="strong"><i>origin</i></spam> al repositorio remoto.
+            </li>
+          </ol>
+        </div>
+        <div>
+          <img src="./assets/img/git-flow.png" alt="Flujo básico de git" />
+        </div>
+      </section>
+    </article>
+    <h2>Master a Main</h2>
+    <h3>Repositorios nuevos</h3>
+    <div>
+      <pre><code>
+  git init
+  git add .
+  git commit -m "Primer commit"
+  git branch -M main
+  git remote add origin https://github.com/usuario/repositorio.git
+  git push -u origin main
+    </code></pre>
+    </div>
+    <h3>Repositorios existentes</h3>
+    <div>
+      <pre><code>
+git branch -M main
+git remote add origin https://github.com/usuario/repositorio.git
+git push -u origin main      
+    </code></pre>
+    </div>
+    <h3>Reemplazar la rama master por main en GitHub</h3>
+    <div>
+      <pre><code>
+# Paso 1
+# Crea la rama local main y pásale el historial de la rama master
+git branch -m master main
+
+# Paso 2
+# Haz un push de la nueva rama local main en el repositorio remoto de GitHub
+git push -u origin main
+
+# Paso 3
+# Cambia el HEAD actual a la rama main
+git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
+
+# Paso 4
+Cambiar rama default de master a main en repositorio de GitHub.
+
+# Paso 5
+# Elimina la rama master del repositorio remoto
+git push origin --delete master
+      </code></pre>
+    </div>
+    <h3>Para reemplazar la rama master por main en Git</h3>
+    <div>
+      <pre><code>
+        Para reemplazar la rama master por main en Git
+      </code></pre>
+    </div>
+
+    <a href="https://jonmircha.com/git" target="_blank"
+      >Documentacion de referencia</a
+    >
+  </body>
+</html>

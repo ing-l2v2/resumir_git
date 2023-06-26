@@ -1,0 +1,24 @@
+.git-card-row > div:first-child {
+  padding: 1rem;
+}
+.git-card-row > div:last-child {
+  width: 80%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1200px) {
+  .git-card-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .git-card-row > div {
+    width: 48%;
+  }
+  .git-card-row > div:first-child {
+    padding: 1rem;
+  }
+  .git-card-row > div:last-child {
+    width: 48%;
+  }
+}
