@@ -8,6 +8,10 @@
   width: 80%;
   margin: 0 auto;
 }
+.git-pre-wrap {
+  white-space: pre-wrap;
+  overflow: hidden;
+}
 @media screen and (min-width: 1200px) {
   .git-card-row {
     display: flex;

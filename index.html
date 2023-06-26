@@ -50,7 +50,7 @@
           las carpetas de tu sistema operativo. En un repositorio se pueden
           tener mas de dos cuentas
         </p>
-        <pre><code>
+        <pre class="git-pre-wrap"><code>
     git --version
     git config --global user.name "Ing. Leonel Villa"
     git config --global user.username "l2v2blue"
@@ -82,7 +82,7 @@
       <section class="git-seccion">
         <h2>Inicializar Git en un directorio local</h2>
         <p>Crear o desplazarse hasta la carpeta donde se inicializará git</p>
-        <pre><code>
+        <pre class="git-pre-wrap"><code>
   mkdir carpeta
   cd carpeta
   touch README.md     <strong>opcional</strong> contiene información y documentación del repositorio
@@ -121,15 +121,17 @@
               <span class="strong"><i>staged</i></span> también se le llama
               index por que es el área donde git indexa y agrega los cambios
               realizados en los archivos previos a comprometerlos en su
-              registro.
+              registro. <strong>INDEX | STAGING</strong>. Estado de indice o
+              estado de ensayo.
             </li>
             <li>
               <spam class="strong"><i>Local Repository</i></spam
               >: Es el área correspondiente al estado
               <spam class="strong"><i>committed</i></spam
               >, donde los cambios ya se han registrado en el repositorio de git
-              también se le llama <spam class="strong"><i>HEAD</i></spam> por
-              que indica en qué cambio se encuentra el puntero del repositorio.
+              también se le llama
+              <spam class="strong"><i>HEAD o Local</i></spam> por que indica en
+              qué cambio se encuentra el puntero del repositorio.
             </li>
             <li>
               <spam class="strong"><i>Remote Repository</i></spam
@@ -138,11 +140,92 @@
               remoto donde almacenamos los archivos del proyecto en alguna
               plataforma web como GitHub, GitLab, BitBucket. Git denomina
               <spam class="strong"><i>origin</i></spam> al repositorio remoto.
+              <strong>( GitHub | Remote )</strong>
             </li>
           </ol>
         </div>
         <div>
           <img src="./assets/img/git-flow.png" alt="Flujo básico de git" />
+        </div>
+      </section>
+      <section class="git-seccion">
+        <pre class="git-pre-wrap"><code>
+    # agregar los cambios de un archivo al staged
+    <strong>git add archivo/directorio</strong>
+    # agregar todos los cambios de todos los archivos al staged
+    <strong>git add .</strong>
+
+    # los cambios son comprometidos en el repositorio y debe escribir el mensaje del cambio cuando se abra el archivo de configuración al terminar guarde y cierre el archivo para que los cambios tengan efecto
+    <strong>git commit</strong>
+    # es un shortcut del comando anterior escribes y confirmas el mensaje del cambio en un sólo paso
+    <strong>git commit -m "mensaje descriptivo del cambio"</strong>
+
+    # se agrega el origen remoto de tu repositorio de GitHub
+    git remote add origin https://github.com/usuario/repositorio.git
+    # la primera vez que vinculamos el repositorio remoto con el local
+    <strong>git push -u origin master</strong>
+    # para las subsecuentes actualizaciones, sino cambias de rama
+    <strong>git push</strong>
+
+    #para descargar los cambios del repositorio remoto al local
+    <strong>git pull</strong>
+        </code></pre>
+      </section>
+      <section class="git-seccion">
+        <div>
+          <p>
+            Formas de ejecutar add <br />$<small
+              ><strong> git add .</strong></small
+            >
+            /* Agrega todos los cambios */ <br />$
+            <small><strong> git add file1.txt *.java file2.txt</strong></small
+            ><br />$
+            <small
+              ><strong>
+                git add nom_path1 nom_path2/*.js nom_path3</strong
+              ></small
+            >
+          </p>
+          <p>
+            Formas de ejecutar commit <br />$
+            <small
+              ><strong
+                >git commit -m "Referencia de las modificaciones
+                contenidas</strong
+              ></small
+            >
+            <br />$
+            <small
+              ><strong
+                >git commit -am "Referencia de las modificaciones contenidas con
+                add . incluido"</strong
+              ></small
+            >
+          </p>
+          <p>
+            Ejecución de push para subir o empujar los cambios hacia la branch
+            (rama) del repositorio remoto, previamente se debe haber agregado el
+            origen remoto del repositorio de GitHub en caso contrario agregar
+            mediante <br />$
+            <small
+              ><strong
+                >git remote add origin
+                https://github.com/usuario/repositorio.git</strong
+              ></small
+            ><br />$ <small><strong>git push -u origin main</strong></small
+            ><br />$ <small><strong>git push </strong></small> para subsecuentes
+            actualizaciones sino hay cambio de rema.
+          </p>
+          <p>
+            Para obtener, jalar o bajar los cambios desde el remoto hacia el
+            local <br />$ <small><strong>git pull</strong></small>
+          </p>
+          <p>
+            Para realizar cualquier cambio en el codigo de desarrollo
+            previamente se debe ejecutar un
+            <small><strong>$ git pull</strong></small> para obtener todas las
+            modificaciones antes de modificar código.
+          </p>
         </div>
       </section>
     </article>
@@ -152,10 +235,13 @@
         <h2>Master a Main</h2>
         <h3>Repositorios nuevos</h3>
         <div>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
       git init
-      git add .
+      git add .   <strong>Del working directory hacia el Staging (estado escenificado)</strong>
+      <strong># Seleccionar los archivos a mover hacia Index | Staging. No pasan todos solo los cambios que seleccionemos</strong>
+      git add file1.txt *.java file2.txt
       git commit -m "Primer commit"
+      git commit -am "Primer commit"  <strong>Realiza un add . y un commit</strong>
       git branch -M main
       git remote add origin https://github.com/usuario/repositorio.git
       git push -u origin main
@@ -163,7 +249,7 @@
         </div>
         <h3>Repositorios existentes</h3>
         <div>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     git branch -M main
     git remote add origin https://github.com/usuario/repositorio.git
     git push -u origin main
@@ -171,7 +257,7 @@
         </div>
         <h3>Reemplazar la rama master por main en GitHub</h3>
         <div>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     # Paso 1 :: Crear rama local main y pásar historial de rama master
     git branch -m master main
     
@@ -192,7 +278,7 @@
         </div>
         <h3>Para reemplazar la rama master por main en Git</h3>
         <div>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
             git config --global init.defaultBranch main
           </code></pre>
         </div>
@@ -212,7 +298,7 @@
               >gitignore.io</a
             >.
           </p>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     # esto es un comentario
     archivo.ext
     carpeta
@@ -240,7 +326,7 @@
             Ubicarse en el directorio donde se depositará el repositorio a
             clonar
           </p>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     git clone https://github.com/nom_usuario/nom_repositorio.git
           </code></pre>
         </div>
@@ -305,7 +391,7 @@
               duplicación de contenido.
             </li>
           </ul>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     # nos cambiamos a la rama principal que quedará de la fusión
     git checkout rama-principal
 
@@ -321,7 +407,7 @@
         <h2>Cambios</h2>
         <div>
           <p>Puedes agregar modificaciones al último cambio</p>
-          <pre><code>            
+          <pre class="git-pre-wrap"><code>            
     # sin editar el mensaje del último commit 
     git commit --amend --no-edit
 
@@ -335,7 +421,7 @@
             Podemos desplazarnos en el historial del repositorio hacia atrás o
             adelante en cambios o ramas , sin afectar el repositorio como tal.
           </p>
-          <pre><code>            
+          <pre class="git-pre-wrap"><code>            
     # cambiar a una rama 
     git checkout nombre-rama 
 
@@ -355,7 +441,7 @@
             proyecto, con la información de la fecha, el autor y id de cada
             cambio.
           </p>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     git log
 
     # muestra en una sola línea por cambio
@@ -401,7 +487,7 @@
             Podemos eliminar el historial de cambios del proyecto hacia adelante
             con respecto de un punto de referencia.
           </p>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     #nos muestra el listado de archivos nuevos (untracked), borrados o editados
     git status
 
@@ -433,7 +519,7 @@
             cambios de un repositorio para que quede como si lo acabarás de
             crear ejecuta esta serie de comandos:
           </p>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     cd carpeta-repositorio
     mv .git/config ~/saved_git_config
     rm -rf .git
@@ -453,7 +539,7 @@
         <h2>Remotos</h2>
         <div>
           <p></p>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     # muestra los orígenes remotos del repositorio
     git remote
 
@@ -484,7 +570,7 @@
             Con esta opción git nos permite versionar nuestro código, librería o
             proyecto.
           </p>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     # listar etiquetas
     git tag
 
@@ -531,7 +617,7 @@
             Para crear esta rama especial en GitHub ejecutamos los siguientes
             comandos:
           </p>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     git branch gh-pages
     git checkout gh-pages
 
@@ -620,7 +706,7 @@
             Anexo un resumen de los comandos a ejecutar para colaborar en un
             repositorio de GitHub:
           </p>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     # forkear repositorio
     git clone https://github.com/usuario/repositorio.git
     git remote -v
@@ -685,7 +771,7 @@
       <section class="git-seccion">
         <h2>Prácticas personales</h2>
         <div>
-          <pre><code>
+          <pre class="git-pre-wrap"><code>
     $ git config --global -e
     $ git init
     $ git add .
