@@ -10,8 +10,8 @@
   <body>
     <h1>Git & GitHub</h1>
     <article>
-      <h2>Configurando Git por Primera vez</h2>
-      <section>
+      <section class="git-seccion">
+        <h2>Configurando Git por Primera vez</h2>
         <pre><code>
     git --version
     git config --global user.name "Ing. Leonel Villa"
@@ -38,8 +38,8 @@
     </article>
     <hr />
     <article>
-      <h2>Inicializar Git en un directorio local</h2>
-      <section>
+      <section class="git-seccion">
+        <h2>Inicializar Git en un directorio local</h2>
         <pre><code>
   mkdir carpeta
   cd carpeta
@@ -104,56 +104,564 @@
         </div>
       </section>
     </article>
-    <h2>Master a Main</h2>
-    <h3>Repositorios nuevos</h3>
-    <div>
-      <pre><code>
-  git init
-  git add .
-  git commit -m "Primer commit"
-  git branch -M main
-  git remote add origin https://github.com/usuario/repositorio.git
-  git push -u origin main
-    </code></pre>
-    </div>
-    <h3>Repositorios existentes</h3>
-    <div>
-      <pre><code>
-git branch -M main
-git remote add origin https://github.com/usuario/repositorio.git
-git push -u origin main      
-    </code></pre>
-    </div>
-    <h3>Reemplazar la rama master por main en GitHub</h3>
-    <div>
-      <pre><code>
-# Paso 1
-# Crea la rama local main y pásale el historial de la rama master
-git branch -m master main
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Master a Main</h2>
+        <h3>Repositorios nuevos</h3>
+        <div>
+          <pre><code>
+      git init
+      git add .
+      git commit -m "Primer commit"
+      git branch -M main
+      git remote add origin https://github.com/usuario/repositorio.git
+      git push -u origin main
+        </code></pre>
+        </div>
+        <h3>Repositorios existentes</h3>
+        <div>
+          <pre><code>
+    git branch -M main
+    git remote add origin https://github.com/usuario/repositorio.git
+    git push -u origin main
+        </code></pre>
+        </div>
+        <h3>Reemplazar la rama master por main en GitHub</h3>
+        <div>
+          <pre><code>
+    # Paso 1 :: Crear rama local main y pásar historial de rama master
+    git branch -m master main
+    
+    # Paso 2 :: Hacer un push de la nueva rama local main en el repositorio remoto de GitHub
+    git push -u origin main
+    
+    # Paso 3 :: Cambia el HEAD actual a la rama main
+    git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
+    
+    # Paso 4 :: Cambiar rama default de master a main en repositorio de GitHub.
+    En el repositorio de GitHub selecconar Settings
+    En Default Branch cambiar el nombre de la rama de master a main o a cualquier otra rama definida.
+    Para más información consulte el <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch" target="_blank">enlace</a>
+    
+    # Paso 5 ::  Elimina la rama master del repositorio remoto
+    git push origin --delete master
+          </code></pre>
+        </div>
+        <h3>Para reemplazar la rama master por main en Git</h3>
+        <div>
+          <pre><code>
+            git config --global init.defaultBranch main
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Ignorar archivos</h2>
+        <div>
+          <p>
+            En el archivo .gitignore se debe incluir todo lo que NO se quiera
+            incluir en el repositorio. Se lo puede crear manualmente o con
+            <a
+              href="https://www.toptal.com/developers/gitignore"
+              target="_blank"
+              >gitignore.io</a
+            >.
+          </p>
+          <pre><code>
+    # esto es un comentario
+    archivo.ext
+    carpeta
+    /archivo_desde_raiz.ext
+    # ignorar todos los archivos que terminen en .log
+    *.log
+    # excepto production.log
+    !production.log
+    # ignorar los archivos terminados en .txt dentro de la carpeta doc,
+    # pero no en sus subcarpetas
+    doc/*.txt
+    # ignorar todos los archivos terminados en .txt dentro de la carpeta doc
+    # y también en sus subcarpetas
+    doc/**/*.txt
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Clonar repositorios</h2>
+        <div>
+          <p>
+            Ubicarse en el directorio donde se depositará el repositorio a
+            clonar
+          </p>
+          <pre><code>
+    git clone https://github.com/nom_usuario/nom_repositorio.git
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Ramas</h2>
+        <div>
+          <p>
+            Una rama permitirá aislar una nueva funcionalidad en el código que
+            después se podrá añadir a la versión principal.
+          </p>
+          <h3>Crear rama</h3>
+          <p>git branch nombre-rama</p>
+          <h3>Cambiar de rama</h3>
+          <p>git checkout nombre-rama</p>
+          <h3>Crear una rama y cambiarse a ella</h3>
+          <p>git checkout -b nombre-rama</p>
+          <h3>Eliminar rama</h3>
+          <p>git branch -d nombre-rama</p>
+          <h3>Eliminar rama método forzado</h3>
+          <p>git branch -D nombre-rama</p>
+          <h3>Eliminar ramas remotas</h3>
+          <p>git push origin --delete nombre-rama</p>
+          <h3>Listar todas las ramas del repositorio</h3>
+          <p>git branch</p>
+          <h3>lista ramas no fusionadas a la rama actual</h3>
+          <p>git branch --no-merged</p>
+          <h3>lista ramas fusionadas a la rama actual</h3>
+          <p>git branch --merged</p>
+          <h3>rebasar ramas</h3>
+          <p>
+            git checkout rama-secundaria <br />
+            git rebase rama-principal
+          </p>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Fusiones</h2>
+        <div>
+          <p>Une dos ramas. Para hacer una fusión se necesita:</p>
+          <ol>
+            <li>
+              Situarse en la rama que se quedará con el contenido fusionado.
+            </li>
+            <li>Fusionar.</li>
+          </ol>
+          <p>Cuando se fusionan ramas se pueden dar 2 resultados diferentes:</p>
+          <ul>
+            <li>
+              <strong><i>Fast-Forward</i></strong
+              >: Fusión se hace automática, no hay conflictos por resolver.
+            </li>
+            <li>
+              <strong><i>Manual Merge</i></strong
+              >: La fusión hay que hacerla manual, para resolver conflictos de
+              duplicación de contenido.
+            </li>
+          </ul>
+          <pre><code>
+    # nos cambiamos a la rama principal que quedará de la fusión
+    git checkout rama-principal
 
-# Paso 2
-# Haz un push de la nueva rama local main en el repositorio remoto de GitHub
-git push -u origin main
+    # ejecutamos el comando merge con la rama secundaria a fusionar
+    git merge rama-secundaria            
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Cambios</h2>
+        <div>
+          <p>Puedes agregar modificaciones al último cambio</p>
+          <pre><code>            
+    # sin editar el mensaje del último commit 
+    git commit --amend --no-edit
 
-# Paso 3
-# Cambia el HEAD actual a la rama main
-git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
+    # editando el mensaje del último commit 
+    git commit --amend -m "nuevo mensaje para el último commit" 
 
-# Paso 4
-Cambiar rama default de master a main en repositorio de GitHub.
+    # eliminar el último commit 
+    git reset --hard HEAD~1
+          </code></pre>
+          <p>
+            Podemos desplazarnos en el historial del repositorio hacia atrás o
+            adelante en cambios o ramas , sin afectar el repositorio como tal.
+          </p>
+          <pre><code>            
+    # cambiar a una rama 
+    git checkout nombre-rama 
 
-# Paso 5
-# Elimina la rama master del repositorio remoto
-git push origin --delete master
-      </code></pre>
-    </div>
-    <h3>Para reemplazar la rama master por main en Git</h3>
-    <div>
-      <pre><code>
-        Para reemplazar la rama master por main en Git
-      </code></pre>
-    </div>
+    # cambiar a un commit en particular
+    git checkout id-commit
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Registro del Historial</h2>
+        <div>
+          <p>
+            <strong>git log</strong> nos permite conocer todo el historial de un
+            proyecto, con la información de la fecha, el autor y id de cada
+            cambio.
+          </p>
+          <pre><code>
+    git log
 
+    # muestra en una sola línea por cambio
+    git log --oneline
+
+    # guarda el log en la ruta y archivo que especifiquemos
+    git log > commits.txt
+
+    # muestra el historial con el formato que indicamos
+    git log --pretty=format:"%h - %an, %ar : %s"
+
+    # cambiamos la n por cualquier número entero y mostrará los n cambios recientes
+    git log -n
+
+    # muestra los cambios realizados después de la fecha especificada
+    git log --after="2019-07-07 00:00:00"
+
+    # muestra los cambios realizados antes de la fecha especificada
+    git log --before="2019-07-08 00:00:00"
+
+    # muestra los cambios realizados en el rango de fecha especificado
+    git log --after="2019-07-07 00:00:00" --before="2019-07-08 00:00:00"
+
+    # muestra una gráfica del historial de cambios, rama y fusiones
+    git log --oneline --graph --all
+
+    # muestra todo el registro de acciones del log
+    # incluyendo inserciones, cambios, eliminaciones, fusiones, etc.
+    git reflog
+
+    # diferencias entre el Working Directory y el Staging Area
+    git diff            
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Reseteo del historial</h2>
+        <div>
+          <p>
+            Podemos eliminar el historial de cambios del proyecto hacia adelante
+            con respecto de un punto de referencia.
+          </p>
+          <pre><code>
+    #nos muestra el listado de archivos nuevos (untracked), borrados o editados
+    git status
+
+    # borra HEAD
+    git reset --soft
+
+    # borra HEAD y Staging
+    git reset --mixed
+
+    # borra todo: HEAD, Staging y Working Directory
+    git reset --hard
+
+    # deshace todos los cambios después del commit indicado, preservando los cambios localmente
+    git reset id-commit
+
+    # desecha todo el historial y regresa al commit especificado
+    git reset --hard id-commit            
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Resetear un repositorio</h2>
+        <div>
+          <p>
+            Si en algún momento tienes la necesidad de resetear el historial de
+            cambios de un repositorio para que quede como si lo acabarás de
+            crear ejecuta esta serie de comandos:
+          </p>
+          <pre><code>
+    cd carpeta-repositorio
+    mv .git/config ~/saved_git_config
+    rm -rf .git
+    git init
+    git branch -M main
+    git add .
+    git commit -m "Commit inicial"
+    mv ~/saved_git_config .git/config
+    git push --force origin main            
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Remotos</h2>
+        <div>
+          <p></p>
+          <pre><code>
+    # muestra los orígenes remotos del repositorio
+    git remote
+
+    # muestra los orígenes remotos con detalle
+    git remote -v
+
+    # agregar un orígen remoto
+    git remote add nombre-orígen https://github.com/usuario/repositorio.git
+
+    # renombrar un orígen remoto
+    git remote rename nombre-viejo nombre-nuevo
+
+    # eliminar un orígen remoto
+    git remote remove nombre-orígen
+
+    # descargar una rama remota a local diferente a la principal
+    git checkout --track -b rama-remota origin/rama-remota            
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Etiquetas</h2>
+        <div>
+          <p>
+            Con esta opción git nos permite versionar nuestro código, librería o
+            proyecto.
+          </p>
+          <pre><code>
+    # listar etiquetas
+    git tag
+
+    # crea una etiqueta
+    git tag numero-versión
+
+    # eliminar una etiqueta
+    git tag -d numero-versión
+
+    # mostrar información de una etiqueta
+    git show numero-versión
+
+    # sincronizando la etiqueta del repositorio local al remoto
+    git add .
+    git  tag v1.0.0
+    git commit -m "v1.0.0"
+    git push origin numero-versión
+
+    # generando una etiqueta anotada (con mensaje de commit)
+    git add .
+    git tag -a "v1.0.0" -m "Mensaje de la etiqueta"
+    git push --tags                        
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>GitHub Pages</h2>
+        <div>
+          <p>
+            <a href="https://pages.github.com/" target="_blank"
+              ><strong><i>gh-pages</i></strong></a
+            >
+            es una rama especial para crear un sitio web a tu proyecto alojado
+            directamente en tu repositorio de GitHub.
+          </p>
+          <ul>
+            <li>URL del repositorio: https://github.com/usuario/repositorio</li>
+            <li>URL del sitio: https://usuario.github.io/repositorio</li>
+          </ul>
+          <p>
+            Para crear esta rama especial en GitHub ejecutamos los siguientes
+            comandos:
+          </p>
+          <pre><code>
+    git branch gh-pages
+    git checkout gh-pages
+
+    git remote add origin https://github.com/usuario/repositorio.git
+    git push origin gh-pages
+
+    # para descargar los cambios del repositorio remoto al local
+    git pull origin gh-pages            
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Colaboración en GitHub</h2>
+        <div>
+          <p>
+            Para poder colaborar en proyectos alojados en GitHub necesitamos
+            hacer uso de los forks y pull requests, herramientas que nos ofrece
+            la plataforma para dicho objetivo.
+          </p>
+          <p>A continuación describo el proceso de colaboración en GitHub.</p>
+          <ol>
+            <li>
+              Forkea el repositorio en el que quieras colaborar, para hacerlo,
+              sigue las instrucciones de este
+              <a
+                href="https://docs.github.com/en/get-started/quickstart/fork-a-repo"
+                target="_blank"
+              >
+                enlace </a
+              >.
+            </li>
+            <li>
+              Una vez forkeado el repositorio en tu cuenta de GitHub, clónalo en
+              tu equipo de cómputo.
+            </li>
+            <li>
+              En el repositorio local hay que configurar los orígenes remotos de
+              tu nueva copía para tener ambos remotos, los originales (origin) y
+              los de tu copia, para hacerlo, sigue las instrucciones de este
+              enlace.
+            </li>
+            <li>
+              Crea una rama nueva en tu fork local para hacer tu colaboración, y
+              sincrónizala con tu repositorio remoto, para hacerlo, sigue las
+              instrucciones de este
+              <a
+                href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork"
+                target="_blank"
+                >enlace</a
+              >.
+            </li>
+            <li>
+              Configura tu repositorio para que acepté cambios (pull requests),
+              para hacerlo, sigue las instrucciones de este
+              <a
+                href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork"
+                target="_blank"
+              >
+                enlace
+              </a>
+              .
+            </li>
+            <li>
+              Crea una pull request, para hacerlo, sigue las instrucciones de
+              este
+              <a
+                href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request"
+                target="_blank"
+                >enlace</a
+              >.
+            </li>
+            <li>
+              Espera a que el dueño del repositorio original, acepte tus
+              cambios.
+            </li>
+            <li>
+              Una vez que acepten tu pull request, es recomendable que borres la
+              rama en la que trabajaste el cambio y actualices tu repositorio
+              forkeado, con los cambios del repositorio original.
+            </li>
+          </ol>
+          <p>
+            Anexo un resumen de los comandos a ejecutar para colaborar en un
+            repositorio de GitHub:
+          </p>
+          <pre><code>
+    # forkear repositorio
+    git clone https://github.com/usuario/repositorio.git
+    git remote -v
+    git remote rename origin fork
+    git remote add origin https://github.com/usuario/repositorio.git
+    git checkout -b rama-nueva
+    git push fork rama-nueva
+    # solicitar el pull request
+    # aceptar el pull request
+    git checkout main
+    git pull origin main
+    git push fork main
+    git branch -d rama-nueva
+    git push fork --delete rama-nueva            
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Aprender más</h2>
+        <div>
+          <p>
+            A continuación algunos enlaces donde se puede profundizar
+            conocimientos sobre Git y GitHub:
+          </p>
+          <ul>
+            <li>
+              <a
+                href="http://rogerdudler.github.io/git-guide/index.es.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Git - la guía sencilla.
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://git-scm.com/book/es/v2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Libro Git Pro
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://docs.github.com/es"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Guías oficiales de GitHub.</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+      <hr />
+    </article>
+    <hr />
+    <article>
+      <section class="git-seccion">
+        <h2>Prácticas personales</h2>
+        <div>
+          <pre><code>
+    $ git config --global -e
+    $ git init
+    $ git add .
+    $ git status
+    $ git commit -m "Primer commit 2023-06-26"
+    $ git branch -M main
+    $ git remote add origin https://github.com/l2v2blue/resumir_git.git
+    $ git push -u origin main
+    $ git commit -m "Modificación de user.password en index.html 2023-06-26"
+    $ git push -u origin main
+    $ git status -s
+    $ git add .
+    $ git commit -m "Agregando directorio de git-documentado 2023-06-26"
+    $ git push -u origin main
+          </code></pre>
+        </div>
+      </section>
+    </article>
     <a href="https://jonmircha.com/git" target="_blank"
       >Documentacion de referencia</a
     >
