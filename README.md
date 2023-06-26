@@ -1,5 +1,5 @@
 # Git & GitHub
-## Configurando git por primera vez
+**Configurando git por primera vez**
 ## Inicializar Git en un directorio local
 ## Flujo básico de Git
 ## De master a main o cambio de nombre de una rama
