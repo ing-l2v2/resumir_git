@@ -26,13 +26,16 @@
     git config --global user.name "Ing. Leonel Villa"
     git config --global user.username "l2v2blue"
     git config --global user.password "lv..2021"
+    <strong>/* Email con el que tiene la cuenta vinculada con github */</strong>
     git config --global user.email l2v2blue@gmail.com
+    <strong>/* Activar los colores en la UI de la terminal */</strong>
     git config --global user.ui true
     git config --global init.defaultBranch main
+    <strong>/* Muestra en pantalla la configuración, salir con letra q */</strong>
     git config --list
     # asignar visual studio code como editor de configuración de git
     git config --global core.editor "code --wait"
-    # Abre editor con configuracion generada y espara a que el editor cierre el archivo
+    # Abre editor (VScode) con configuracion generada (Global y local) y espera a que el editor cierre el archivo
     git config --global -e
     # para estandarizar los saltos de línea en windows
     git config --global core.autocrlf true
