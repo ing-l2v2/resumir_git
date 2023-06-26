@@ -8,8 +8,37 @@
     <link rel="stylesheet" href="./assets/css/git-index.css" />
   </head>
   <body>
-    <h1>Git & GitHub</h1>
-    <article>
+    <article id="git-00">
+      <h1>Git & GitHub</h1>
+      <section class="git-seccion">
+        <h2>Indice temático</h2>
+        <ol>
+          <li><a href="#git-01">Configurando Git por primera vez</a></li>
+          <li>
+            <a href="#git-02">Inicializar Git en un directorio local</a>
+          </li>
+          <li><a href="#git-03">Flujo básico de Git</a></li>
+          <li>
+            <a href="#git-04">Master a main, cambio de nombre de rama</a>
+          </li>
+          <li><a href="#git-05">Ignorar archivos</a></li>
+          <li><a href="#git-06">Clonar repositorios</a></li>
+          <li><a href="#git-07">Ramas</a></li>
+          <li><a href="#git-08">Fusiones</a></li>
+          <li><a href="#git-09">Cambios</a></li>
+          <li><a href="#git-10">Registro del historial</a></li>
+          <li><a href="#git-11">Reseteo de historial</a></li>
+          <li><a href="#git-12">Resetear un repositorio</a></li>
+          <li><a href="#git-13">Remotos</a></li>
+          <li><a href="#git-14">Etiquetas</a></li>
+          <li><a href="#git-15">GitHub Pages</a></li>
+          <li><a href="#git-16">Colaboración en GitHub</a></li>
+          <li><a href="#git-17">Aprender más</a></li>
+          <li><a href="#git-18">Prácticas personales</a></li>
+        </ol>
+      </section>
+    </article>
+    <article id="git-01">
       <section class="git-seccion">
         <h2>Configurando Git por Primera vez</h2>
         <p>
@@ -49,22 +78,23 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-02">
       <section class="git-seccion">
         <h2>Inicializar Git en un directorio local</h2>
+        <p>Crear o desplazarse hasta la carpeta donde se inicializará git</p>
         <pre><code>
   mkdir carpeta
   cd carpeta
-  touch README.md
-  touch .gitignore
-  # inicializar como proyecto para gestionar con git, generando un directorio oculto .git
+  touch README.md     <strong>opcional</strong> contiene información y documentación del repositorio
+  touch <strong>.gitignore</strong>    archivos que no participan, oculto, listar con <small><strong>ls -a</strong></small>
+  <strong># inicializar como proyecto para gestionar con git, generando un directorio oculto .git </strong>
   git init
   code .
         </code></pre>
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-03">
       <section class="git-card-row">
         <div>
           <h2>Flujo Básico</h2>
@@ -117,7 +147,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-04">
       <section class="git-seccion">
         <h2>Master a Main</h2>
         <h3>Repositorios nuevos</h3>
@@ -169,7 +199,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-05">
       <section class="git-seccion">
         <h2>Ignorar archivos</h2>
         <div>
@@ -202,7 +232,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-06">
       <section class="git-seccion">
         <h2>Clonar repositorios</h2>
         <div>
@@ -217,7 +247,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-07">
       <section class="git-seccion">
         <h2>Ramas</h2>
         <div>
@@ -252,7 +282,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-08">
       <section class="git-seccion">
         <h2>Fusiones</h2>
         <div>
@@ -286,7 +316,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-09">
       <section class="git-seccion">
         <h2>Cambios</h2>
         <div>
@@ -316,7 +346,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-10">
       <section class="git-seccion">
         <h2>Registro del Historial</h2>
         <div>
@@ -363,7 +393,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-11">
       <section class="git-seccion">
         <h2>Reseteo del historial</h2>
         <div>
@@ -394,7 +424,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-12">
       <section class="git-seccion">
         <h2>Resetear un repositorio</h2>
         <div>
@@ -418,7 +448,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-13">
       <section class="git-seccion">
         <h2>Remotos</h2>
         <div>
@@ -446,7 +476,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-14">
       <section class="git-seccion">
         <h2>Etiquetas</h2>
         <div>
@@ -482,7 +512,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-15">
       <section class="git-seccion">
         <h2>GitHub Pages</h2>
         <div>
@@ -515,7 +545,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-16">
       <section class="git-seccion">
         <h2>Colaboración en GitHub</h2>
         <div>
@@ -610,7 +640,7 @@
       </section>
     </article>
     <hr />
-    <article>
+    <article id="git-17">
       <section class="git-seccion">
         <h2>Aprender más</h2>
         <div>
@@ -651,7 +681,7 @@
       <hr />
     </article>
     <hr />
-    <article>
+    <article id="git-18">
       <section class="git-seccion">
         <h2>Prácticas personales</h2>
         <div>
@@ -670,6 +700,8 @@
     $ git add .
     $ git commit -m "Agregando directorio de git-documentado 2023-06-26"
     $ git push -u origin main
+    <strong>Traer cambios desde el origin hacia el main local</strong>
+    $ git pull
           </code></pre>
         </div>
       </section>
