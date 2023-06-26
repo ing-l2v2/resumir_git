@@ -1,0 +1,158 @@
+# git-scm.com/downloads  Usar la terminal git bash BASH acronimo para Bourne-Again Shell
+# git bash para edicion
+git --version
+
+#Configuracion
+git config --global user.name "Ing. Leonel Villa"
+git config --global user.username "l2v2blue"
+git config --global user.password "l2v2..2021"
+git config --global user.email l2v2blue@gmail.com
+git config --global core.editor "code --wait"
+git config --global core.autocrlf true           # Caso windows
+git config --global core.autocrlf input          # Caso Linux o Mac
+# Abre el editor con la configuracion generada y esparar a que el editor cierre el archivo
+git config --global -e 
+git config -h          git config --help
+git --help
+git add -h
+
+#Comandos de git
+ls
+pwd
+cd  # usando tab key rellena nombre de carpeta 
+mkdir crearDirectorio
+git init    # inicializar como proyecto para gestionar con git, generando un directorio oculto .git
+ls -a       # Muestra todos los archivos y directorios incluso los ocultos
+cd .git 
+ls -a       ## Muestra un "detalle de implementación"
+
+# Stage area, area de ensayo
+git add file1.txt *.java file2.txt   # Seleccionar los archivos a mover hacia Stage. No pasan todos solo los cambios que seleccionemos
+git commit          # Pasar los cambios desde stage hacia etapa commit eliminandose los de la etapa Stage
+git commit -am "Mensaje descriptivo del commit"   #Realiza un add . y luego un commit
+git push            # Pasa los cambios a la etapa de server en nube (git hub) desde la etapa commit
+# En caso de eliminar un archivo se debe ejecutar un git add fileEliminado
+
+# ubicado en la carpeta del proyecto
+code .      # para gestionar archivos en vs code
+
+# Mostrar el estado actual de nuestro repositorio
+git status
+git status -s
+
+On branch master        En la rama master
+No commits yet          Ningun commit aún
+Untracked files:        git no los esta siguiendo
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+        file2.txt
+        git documentado.txt
+nothing added to commit but untracked files present (use "git add" to track)
+
+git status -s
+
+lvill@INGL2V2 MINGW64 /e/resumenes/git (master)
+$ git status -s
+?? file1.txt
+?? file2.txt
+?? "git documentado.txt"
+lvill@INGL2V2 MINGW64 /e/resumenes/git (master)
+
+git add "git documentado.txt"
+git add *.txt *.java
+git add documentos/*.txt
+
+git status
+
+On branch master
+No commits yet
+Changes to be committed:                    # Cambios para ser comprometidos
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   git documentado.txt
+Changes not staged for commit:              # No puestos en escena para ser comprometidos
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+git status -s
+
+lvill@INGL2V2 MINGW64 /e/resumenes/git (master)
+$ git status -s
+A  file1.txt
+AM "git documentado.txt"
+?? file2.txt
+
+# Por cada modificacion de archivos se debe elevar a Stage mediante git add y deben existir los archivos
+
+git commit -m "Comprometido o Commit Inicial"
+gti status -s       #Se observa que no hay nada en el stage
+
+# Si modifica un archivo file2.txt, luego de guardar se requiere git add para ubicar en el stage
+
+#Duplicar file2.txt de documentos con el nombre file3.txt, realizar add y commit
+rm documentos/file3.txt       #Eliminar file3.txt realizado con commit previo
+
+$ git status -s
+ D documentos/file3.txt
+ M "git documentado.txt"
+
+git add documentos/file2.txt "git documentado.txt"
+git commit -m "Eliminando documentos/file3.txt"
+
+git rm documentos/file1.txt         Elimina documentos/file2.txt y agrega el cambio al stage
+
+git restore --staged documentos/file1.txt      Retorna el file1.txt del staged pero no esta disponible en el equipo local, aún esta eliminado
+git restore documentos/file1.txt               Retorna al equipo local, recupera el documentos/file1.txt
+
+git reset --hard 387a9c2                      Retornar al codigo de la instantanea seleccionada
+
+mv documentos/file1.txt documentos/file1_1.txt
+git mv documentos/file1.txt documentos/file1_1.txt
+
+# Archivo .gitignore se edita en code . agregando los archivos o carpetas que se ignoraran
+.env
+node_module/
+documentos/file2.txt
+# Archivo .gitignore debe ser agregado y conprometido con git add y git commit
+
+git diff            Visualizar cambios de seguimiento
+git diff --staged   Visualiar cambios de stage
+
+git log 
+git log --oneline
+
+git branch          #Conocer la rama en que estamos
+git checkout -b Sac-8576    # Crear una nueva rama Sac-8576
+git checkout -b Feature/nombre-de-la-funcionalidad    # Crear una nueva rama Feature/nombre-de-la-funcionalidad y se cambia a esta rama
+git branch Feature/nombre-de-la-funcionalidad    # Crear una nueva rama Feature/nombre-de-la-funcionalidad y se mantiene en la rama master
+# todos los cambios se agregarian a la rama a la que se cambio
+
+git checkout master     #Cambio a la rama master
+
+git merge Feature/nombre-de-la-funcionalidad    # Estar en master para traer de la rama los cambios
+
+# Cargar en la nube al sitio github.com con la cuenta de usuario
+git remote add origin https://github.com/l2v2blue/resumir_git.git
+git branch -M main
+git push -u origin main
+
+git commit -am "Revision v1.0.1 add con commit"
+
+git commit --amend    #Editar el mensaje descriptivo del commit
+
+# CLONACION Y TAGS
+git pull              # Trae los cambios desde el repositorio remoto hacia el repositorio local
+git tag 2022-12-22_Version_1.0.0 -m "Version 1 del documentado de tag resumido"
+git log --oneline
+git push --tags       # Subira las tags al repositorio remoto
+git clone https://github.com/l2v2blue/resumir_git.git   # Ante catastrofes se puede recuperar todo el proyecto con la url del repositorio remoto
+
+git branch -d Feature/nombre-de-la-funcionalidad  # Elimina la rama especificada
+
+
+# Video de referencia https://www.youtube.com/watch?v=VdGzPZ31ts8 
+# MArketplace de visualstudiocode https://marketplace.visualstudio.com/
