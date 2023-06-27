@@ -154,11 +154,15 @@
     <strong>git add archivo/directorio</strong>
     # agregar todos los cambios de todos los archivos al staged
     <strong>git add .</strong>
+    # Descartar cambios en working directory antes de pasar al Staging
+    <strong>git restore &lt;file&gt;</strong>
 
     # los cambios son comprometidos en el repositorio y debe escribir el mensaje del cambio cuando se abra el archivo de configuración al terminar guarde y cierre el archivo para que los cambios tengan efecto
     <strong>git commit</strong>
     # es un shortcut del comando anterior escribes y confirmas el mensaje del cambio en un sólo paso
     <strong>git commit -m "mensaje descriptivo del cambio"</strong>
+    # Descartar cambios para unstage y regresarlo al Working directory
+    <strong>git restore --staged &lt;file&gt;</strong>
 
     # se agrega el origen remoto de tu repositorio de GitHub
     <strong>git remote add origin https://github.com/usuario/repositorio.git</strong>
@@ -200,6 +204,21 @@
               ><strong
                 >git commit -am "Referencia de las modificaciones contenidas con
                 add . incluido"</strong
+              ></small
+            ><br />$
+            <small
+              ><strong
+                >git commit -amed -m "Referencia de las modificaciones
+                contenidas con add . incluido"</strong
+              ></small
+            ><br />$ <small><strong>git commit --amend --no-edit</strong></small
+            ><br />$
+            <small><strong>git commit -a --amend --no-edit</strong></small>
+            <br />$
+            <small
+              ><strong
+                >git commit -a --amend -m "Cambiando mensaje de última
+                confirmación"</strong
               ></small
             >
           </p>
@@ -431,7 +450,10 @@
             <li>
               <strong><i>Manual Merge</i></strong
               >: La fusión hay que hacerla manual, para resolver conflictos de
-              duplicación de contenido. En cada rama afectan a un mismo archivo
+              duplicación de contenido. En cada rama afectan a un mismo archivo,
+              se debe editar el archivo resultante del espacio Ej. main/merged y
+              luego realizar un git add y un nuevo git commit para luego
+              realizar un git push
             </li>
           </ul>
           <p>
@@ -484,8 +506,11 @@
           <pre class="git-pre-wrap"><code>            
     # cambiar a una rama 
     git checkout nombre-rama 
+    
+    # obtener el id-commit mediante
+    git log --oneline
 
-    # cambiar a un commit en particular
+    # cambiar a un commit en particular en funcion de su id-commit
     git checkout id-commit
           </code></pre>
         </div>
@@ -820,6 +845,15 @@
                 rel="noopener noreferrer"
                 >Guías oficiales de GitHub.</a
               >
+            </li>
+            <li>
+              <a
+                href="./assets/pdf/progit.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Libro en español local</a
+              >
+              - progit.pdf
             </li>
           </ul>
         </div>
