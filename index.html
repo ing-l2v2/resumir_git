@@ -426,19 +426,34 @@
             <li>
               <strong><i>Fast-Forward</i></strong
               >: Fusión se hace automática, no hay conflictos por resolver.
+              Ramas trabajan en archivos diferentes.
             </li>
             <li>
               <strong><i>Manual Merge</i></strong
               >: La fusión hay que hacerla manual, para resolver conflictos de
-              duplicación de contenido.
+              duplicación de contenido. En cada rama afectan a un mismo archivo
             </li>
           </ul>
+          <p>
+            Posterior a la fusión merge se requiere realizar un
+            <code>
+              <strong>git push -u origin main </strong>
+            </code>
+            o a la rama resultante de la fusion
+          </p>
           <pre class="git-pre-wrap"><code>
-    # nos cambiamos a la rama principal que quedará de la fusión
+    # Cambiar a la rama principal resultante que quedará de la fusión
     git checkout rama-principal
+    Ej.: git checkout main
 
-    # ejecutamos el comando merge con la rama secundaria a fusionar
-    git merge rama-secundaria            
+    # ejecutar el comando merge con la rama secundaria a fusionar con la rama principal
+    git merge rama-secundaria
+
+    # Ejecutar un push de la rama principal donde queda la fusion
+    git push -u origin rama-principal
+
+    # Si se requiere eliminar la rama-secundaria posterior al merge o fusión
+    git push -u origin --delete rama-secundaria
           </code></pre>
         </div>
       </section>
@@ -448,9 +463,12 @@
       <section class="git-seccion">
         <h2>Cambios</h2>
         <div>
-          <p>Puedes agregar modificaciones al último cambio</p>
+          <p>
+            Se Puede agregar modificaciones al último cambio (confirmación o
+            commit)
+          </p>
           <pre class="git-pre-wrap"><code>            
-    # sin editar el mensaje del último commit 
+    # sin editar el mensaje de la última confirmación ( commit )
     git commit --amend --no-edit
 
     # editando el mensaje del último commit 
