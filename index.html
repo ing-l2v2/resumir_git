@@ -251,16 +251,17 @@
         <div>
           <pre class="git-pre-wrap"><code>
       git init
-      git add .   <strong>Del working directory hacia el Staging (estado escenificado)</strong>
+      git add .   <strong>Del working directory hacia el Staging (estado escenificado)</strong> aplicará rastreo (tracked) inicialmente archivos se encuentra untracked (no rastreados)
       <strong># Seleccionar los archivos a mover hacia Index | Staging. No pasan todos solo los cambios que seleccionemos</strong>
       git add file1.txt *.java file2.txt
-      git commit -m "Primer commit"
+      git commit -m "Primer commit" <strong>Pasaran los archivos a confirmados (commit)</strong>
       git commit -am "Primer commit"  <strong>Realiza un add . y un commit</strong>
       <strong>/* Crear la rama main y volverla principal en lugar de la master */</strong>
       <strong>git branch -M main</strong>
       git remote add origin https://github.com/usuario/repositorio.git
       git push -u origin main
-        </code></pre>
+          </code></pre>
+          <p></p>
         </div>
         <h3>Repositorios existentes</h3>
         <div>
