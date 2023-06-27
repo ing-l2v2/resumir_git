@@ -163,9 +163,9 @@
     # se agrega el origen remoto de tu repositorio de GitHub
     <strong>git remote add origin https://github.com/usuario/repositorio.git</strong>
     <strong>git remote add origin https://github.com/l2v2blue/resumir_git.git</strong>
-    # la primera vez que vinculamos el repositorio remoto con el local
+    # la primera vez que vinculamos el repositorio remoto con el local master
     <strong>git push -u origin master</strong>
-    # para las subsecuentes actualizaciones, sino cambias de rama
+    # para las subsecuentes actualizaciones, sino cambias de rama, en caso de otra rama entonces <code><strong>git push -u origin nombre-rama-diferente</strong></code>
     <strong>git push</strong>
 
     #para descargar los cambios del repositorio remoto al local
@@ -367,6 +367,22 @@
             Una rama permitirá aislar una nueva funcionalidad en el código que
             después se podrá añadir a la versión principal.
           </p>
+          <p>
+            Los cambios rastreados (tracked) en una rama, confirmados (commit) y
+            luego al realizar un git push se debe ejecutar como
+            <code><strong>git push -u origin nombre-de-la-rama</strong></code
+            >, caso contrario genera error, donde --set-upstream se equivale a
+            -u
+          </p>
+          <pre class="git-pre-wrap"><code>
+          fatal: The current branch html has no upstream branch.
+          To push the current branch and set the remote as upstream, use
+
+              git push --set-upstream origin html
+
+          To have this happen automatically for branches without a tracking
+          upstream, see 'push.autoSetupRemote' in 'git help config'.            
+          </code></pre>
           <h3>Crear rama</h3>
           <p>git branch nombre-rama</p>
           <h3>Cambiar de rama</h3>
