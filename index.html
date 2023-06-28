@@ -205,10 +205,12 @@
                 >git commit -am "Referencia de las modificaciones contenidas con
                 add . incluido"</strong
               ></small
-            ><br />$
+            ><br />
+            # no ejecutar posterior a una Fusión mediante Manual Merge por
+            sobreescritura de commit --amend<br />$
             <small
               ><strong
-                >git commit -amed -m "Referencia de las modificaciones
+                >git commit -a --amend -m "Referencia de las modificaciones
                 contenidas con add . incluido"</strong
               ></small
             ><br />$ <small><strong>git commit --amend --no-edit</strong></small
@@ -490,10 +492,10 @@
             commit)
           </p>
           <pre class="git-pre-wrap"><code>            
-    # sin editar el mensaje de la última confirmación ( commit )
+    # sin editar el mensaje de la última confirmación ( commit ) no ejecutar posterior a una Fusión mediante Manual Merge por existir un --amend
     git commit --amend --no-edit
 
-    # editando el mensaje del último commit 
+    # editando el mensaje del último commit, no ejecutar posterior a una Fusión mediante Manual Merge por existir un --amend
     git commit --amend -m "nuevo mensaje para el último commit" 
 
     # eliminar el último commit 
