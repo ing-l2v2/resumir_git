@@ -525,8 +525,14 @@
     # obtener el id-commit mediante
     git log --oneline
 
-    # cambiar a un commit en particular en funcion de su id-commit, recuerde guardar el commit previo o HEAD
+    # cambiar a un commit en particular en funcion de su id-commit, recuerde guardar el commit previo o HEAD con lo que se obtiene la imagen de ese commit realizado.
     git checkout id-commit
+
+    # Para regresar desde el commit al que se invoco con git checkout id-commit hacia el commit HEAD
+    git switch -
+
+    # O para guardar el commit con un nombre distinto 
+    git switch -c ramaPrevia
           </code></pre>
         </div>
       </section>
@@ -547,23 +553,24 @@
     # muestra en una sola línea por cambio
     git log --oneline
 
-    # guarda el log en la ruta y archivo que especifiquemos
+    # guarda el log en la ruta y archivo que se especifique
     git log > commits.txt
+    git log --oneline > ./assets/commits/commits-26-06-2023.txt
 
-    # muestra el historial con el formato que indicamos
+    # muestra historial con el formato indicado
     git log --pretty=format:"%h - %an, %ar : %s"
 
     # cambiamos la n por cualquier número entero y mostrará los n cambios recientes
     git log -n
 
     # muestra los cambios realizados después de la fecha especificada
-    git log --after="2019-07-07 00:00:00"
+    git log --after="2023-06-28 00:00:00"
 
     # muestra los cambios realizados antes de la fecha especificada
-    git log --before="2019-07-08 00:00:00"
+    git log --before="2023-06-28 00:00:00"
 
     # muestra los cambios realizados en el rango de fecha especificado
-    git log --after="2019-07-07 00:00:00" --before="2019-07-08 00:00:00"
+    git log --after="2023-06-27 00:00:00" --before="2023-06-29 00:00:00"
 
     # muestra una gráfica del historial de cambios, rama y fusiones
     git log --oneline --graph --all
@@ -573,7 +580,7 @@
     git reflog
 
     # diferencias entre el Working Directory y el Staging Area
-    git diff            
+    git diff
           </code></pre>
         </div>
       </section>
@@ -588,7 +595,10 @@
             con respecto de un punto de referencia.
           </p>
           <pre class="git-pre-wrap"><code>
-    #nos muestra el listado de archivos nuevos (untracked), borrados o editados
+    
+    03:07:00
+    
+    # nos muestra el listado de archivos nuevos (untracked), borrados o editados
     git status
 
     # borra HEAD
