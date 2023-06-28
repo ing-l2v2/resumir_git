@@ -511,12 +511,12 @@
     # editando el mensaje del último commit, no ejecutar posterior a una Fusión mediante Manual Merge por existir un --amend. Si existiera el commit en el push entonces se debe realizar pull y modificar manualmente similar a Fusion Manual Merge. Es recomendable usar --amend mientras no se haya ejecutado un push. Ni usarlo en la resolución de conflicto main/merged
     git commit --amend -m "nuevo mensaje para el último commit" 
 
-    # eliminar el último commit     02:51:21
+    # eliminar el último commit
     git reset --hard HEAD~1
           </code></pre>
           <p>
             Podemos desplazarnos en el historial del repositorio hacia atrás o
-            adelante en cambios o ramas , sin afectar el repositorio como tal.
+            adelante en cambios o ramas, sin afectar el repositorio como tal.
           </p>
           <pre class="git-pre-wrap"><code>            
     # cambiar a una rama 
@@ -525,7 +525,7 @@
     # obtener el id-commit mediante
     git log --oneline
 
-    # cambiar a un commit en particular en funcion de su id-commit
+    # cambiar a un commit en particular en funcion de su id-commit, recuerde guardar el commit previo o HEAD
     git checkout id-commit
           </code></pre>
         </div>
