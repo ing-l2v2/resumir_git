@@ -190,7 +190,17 @@
                 git add nom_path1 nom_path2/*.js nom_path3</strong
               ></small
             >
+            <br />$
+            <small
+              ><strong>
+                git add nom_path1 nom_path2/*.js nom_path3</strong
+              ></small
+            >
+            <br />Descartar cambios en working directory antes de pasar al
+            Staging <br />$
+            <strong>git restore &lt;file&gt;</strong>
           </p>
+
           <p>
             Formas de ejecutar commit <br />$
             <small
@@ -222,7 +232,10 @@
                 >git commit -a --amend -m "Cambiando mensaje de última
                 confirmación"</strong
               ></small
-            >
+            ><br />
+            # Descartar cambios para unstage y regresarlo al Working directory
+            <br />$
+            <small><strong>git restore --staged &lt;file&gt;</strong></small>
           </p>
           <p>
             Crear la rama o cambiar de rama a la main<br />$
