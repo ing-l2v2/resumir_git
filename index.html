@@ -157,6 +157,14 @@
     # Descartar cambios en working directory antes de pasar al Staging
     <strong>git restore &lt;file&gt;</strong>
 
+    # Eliminando archivos
+    <strong>git rm &lt;file&gt;</strong>  # Elimina archivos rastreados del staging y del working directory
+    <strong>rm &lt;file&gt;</strong>  # Elimina archivos pero no del staging luego ejecutar git add .
+    <strong>git rm --cached &lt;file&gt;</strong>  # Elimina archivos del staging pero mantiene en working directory
+    
+    # Renombrar archivos
+    <strong>git mv &lt;file_from&gt; &lt;file_to&gt;</strong>  # Renombrar archivos
+    
     # los cambios son comprometidos en el repositorio y debe escribir el mensaje del cambio cuando se abra el archivo de configuración al terminar guarde y cierre el archivo para que los cambios tengan efecto
     <strong>git commit</strong>
     # es un shortcut del comando anterior escribes y confirmas el mensaje del cambio en un sólo paso
@@ -197,8 +205,16 @@
               ></small
             >
             <br />Descartar cambios en working directory antes de pasar al
-            Staging <br />$
-            <strong>git restore &lt;file&gt;</strong>
+            Staging <br />$ <strong>git restore &lt;file&gt;</strong><br />
+            Eliminando archivos <br />$ <strong>git rm &lt;file&gt;</strong> #
+            Elimina archivos rastreados del staging y del working directory
+            <br />$ <strong>rm &lt;file&gt;</strong> # Elimina archivos pero no
+            del staging luego ejecutar git add . <br />
+            $ <strong>git rm --cached &lt;file&gt;</strong> # Elimina archivos
+            del staging pero mantiene en working directory <br />
+            Renombrar archivos <br />
+            $ <strong>git mv &lt;file_from&gt; &lt;file_to&gt;</strong> #
+            Renombrar archivos
           </p>
 
           <p>
@@ -557,9 +573,6 @@
     git log > commits.txt
     git log --oneline > ./assets/commits/commits-26-06-2023.txt
 
-    # muestra historial con el formato indicado
-    git log --pretty=format:"%h - %an, %ar : %s"
-
     # cambiamos la n por cualquier número entero y mostrará los n cambios recientes
     git log -n
 
@@ -581,7 +594,36 @@
 
     # diferencias entre el Working Directory y el Staging Area
     git diff
+
+    # muestra historial con el formato indicado
+    git log --pretty=format:"%h - %an, %ar : %s"
           </code></pre>
+          <h4>Opciones utiles de --pretty=format</h4>
+          <div class="abbr-for-pretty-format">
+            <div><abbr title="Hash de la confirmación">%H</abbr></div>
+            <div><abbr title="Hash de la confirmación abreviado">%h</abbr></div>
+            <div><abbr title="Hash del árbol">%T</abbr></div>
+            <div><abbr title="Hash del árbol abreviado">%t</abbr></div>
+            <div>
+              <abbr title="Hashes de las confirmaciones padre">%P</abbr>
+            </div>
+            <div>
+              <abbr title="Hashes de las confirmaciones padre abreviados"
+                >%p</abbr
+              >
+            </div>
+            <div><abbr title="Author name">%an</abbr></div>
+            <div><abbr title="Author email">%ae</abbr></div>
+            <div><abbr title="Fecha de autoría">%ad</abbr></div>
+            <div><abbr title="Fecha de autoría relativa">%ar</abbr></div>
+            <div><abbr title="Nombre del confirmador">%cn</abbr></div>
+            <div>
+              <abbr title="Dirección de correo del confirmador">%ce</abbr>
+            </div>
+            <div><abbr title="Fecha de confirmación">%cd</abbr></div>
+            <div><abbr title="Fecha de confirmación, relativa">%cr</abbr></div>
+            <div><abbr title="Asunto">%s</abbr></div>
+          </div>
         </div>
       </section>
     </article>
@@ -595,26 +637,23 @@
             con respecto de un punto de referencia.
           </p>
           <pre class="git-pre-wrap"><code>
-    
-    03:07:00
-    
     # nos muestra el listado de archivos nuevos (untracked), borrados o editados
     git status
 
-    # borra HEAD
+    # borra HEAD borraria del Staging
     git reset --soft
 
-    # borra HEAD y Staging
+    # borra HEAD y Staging, regresando los archivos trackeados del Staging al working directory
     git reset --mixed
 
-    # borra todo: HEAD, Staging y Working Directory
+    # borra todo: retornando a como esta en el último HEAD, Staging y Working Directory lo elimina
     git reset --hard
 
     # deshace todos los cambios después del commit indicado, preservando los cambios localmente
     git reset id-commit
 
-    # desecha todo el historial y regresa al commit especificado
-    git reset --hard id-commit            
+    # desecha todo el historial y regresa al commit especificado si poder recuperar lo que esta en el futuro
+    git reset --hard id-commit
           </code></pre>
         </div>
       </section>
@@ -631,14 +670,14 @@
           </p>
           <pre class="git-pre-wrap"><code>
     cd carpeta-repositorio
-    mv .git/config ~/saved_git_config
+    <strong>mv .git/config ~/saved_git_config</strong>
     rm -rf .git
     git init
     git branch -M main
     git add .
     git commit -m "Commit inicial"
     mv ~/saved_git_config .git/config
-    git push --force origin main            
+    <strong>git push --force origin main</strong>
           </code></pre>
         </div>
       </section>

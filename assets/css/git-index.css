@@ -1,6 +1,22 @@
 .git-seccion {
   padding: 1rem;
 }
+.abbr-for-pretty-format {
+  min-width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.abbr-for-pretty-format div {
+  width: calc(100% / 4);
+  text-align: center;
+  align-self: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  height: 3rem;
+}
 .git-card-row > div:first-child {
   padding: 1rem;
 }
@@ -28,5 +44,11 @@
   }
   .git-card-row > div:last-child {
     width: 48%;
+  }
+  .abbr-for-pretty-format {
+    width: 100%;
+  }
+  .abbr-for-pretty-format div {
+    width: 12%;
   }
 }
