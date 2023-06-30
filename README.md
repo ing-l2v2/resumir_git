@@ -1,9 +1,12 @@
 # Git & GitHub
+
 Contenidos desarrollados
 
 **Configurando git por primera vez**,  
 **Inicializar Git en un directorio local**,  
 **Flujo básico de Git**,  
+![Flujo Básico de Git](./assets/img/git-flow.png "Flujo Básico")
+
 **De master a main o cambio de nombre de una rama**,  
 _Repositorios nuevos_  
 _Repositorios existentes_  

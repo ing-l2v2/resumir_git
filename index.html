@@ -31,10 +31,38 @@
           <li><a href="#git-12">Resetear un repositorio</a></li>
           <li><a href="#git-13">Remotos</a></li>
           <li><a href="#git-14">Etiquetas</a></li>
+          <li><a href="#git-14-1">Alias de Git</a></li>
           <li><a href="#git-15">GitHub Pages</a></li>
           <li><a href="#git-16">Colaboración en GitHub</a></li>
-          <li><a href="#git-17">Aprender más</a></li>
-          <li><a href="#git-18">Prácticas personales</a></li>
+          <li>
+            <a href="#git-17">Configurando una segunda cuenta local de Git</a>
+          </li>
+          <li>
+            <a href="#git-18">Agregando Remotes para colaborar</a>
+          </li>
+          <li>
+            <a href="#git-19"
+              >Haciendo cambios y creando una rama para colaborar</a
+            >
+          </li>
+          <li>
+            <a href="#git-20">Solicitando un Pull Request</a>
+          </li>
+          <li>
+            <a href="#git-21">Aceptando un Pull Request</a>
+          </li>
+          <li>
+            <a href="#git-22"
+              >Pasos finales en la cuenta que acepto el Pull Request</a
+            >
+          </li>
+          <li>
+            <a href="#git-23"
+              >Pasos finales en la cuenta que hizo el Pull Request</a
+            >
+          </li>
+          <li><a href="#git-24">Aprender más</a></li>
+          <li><a href="#git-25">Prácticas personales</a></li>
         </ol>
       </section>
     </article>
@@ -723,8 +751,14 @@
         <h2>Etiquetas</h2>
         <div>
           <p>
-            Con esta opción git nos permite versionar nuestro código, librería o
-            proyecto.
+            Con esta opción git nos permite versionar código, librería o
+            proyecto. Para información sobre versionar, puede visitar
+            <a
+              href="https://www.semver.org/lang/es/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Versionado semántico 2.0.0</a
+            >
           </p>
           <pre class="git-pre-wrap"><code>
     # listar etiquetas
@@ -739,16 +773,41 @@
     # mostrar información de una etiqueta
     git show numero-versión
 
+    # Etiquetar un commit tardio con el id del commit
+    git tag -a v1.1.0 id-commit
+
     # sincronizando la etiqueta del repositorio local al remoto
     git add .
     git  tag v1.0.0
     git commit -m "v1.0.0"
-    git push origin numero-versión
+    git push origin numero-versión    # push no transfiere etiquetas a los servidores remotos, se debe enviar la etiqueta de forma explisita.
 
     # generando una etiqueta anotada (con mensaje de commit)
     git add .
     git tag -a "v1.0.0" -m "Mensaje de la etiqueta"
-    git push --tags                        
+    git push origin --tags   # Envia todas las etiquetas al remoto que aun no existen en el
+          </code></pre>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article id="git-14-1">
+      <section class="git-seccion">
+        <h2>Alias de Git</h2>
+        <div>
+          <p>
+            Si no quiere teclear nombre completo de comando git, puede
+            definirlos en el config, algunos ej. de como proceder.
+          </p>
+          <pre class="git-pre-wrap"><code>
+    $ git config --global alias.ck checkout # usaria $ git ck
+    $ git config --global alias.br branch   # usaria $ git br
+    $ git config --global alias.cm commit   # usaria $ git cm
+    $ git config --global alias.st status   # usaria $ git st
+    $ git config --global alias.unstage 'reset HEAD --'   # Esto hace que los 2 comandos siguientes sean equivalentes
+        $ git unstage fileA
+        $ git reset HEAD fileA
+    $ git config --global alias.last 'log -1 HEAD'  # ver cuál fue la última confirmación con git last
           </code></pre>
         </div>
       </section>
@@ -762,7 +821,7 @@
             <a href="https://pages.github.com/" target="_blank"
               ><strong><i>gh-pages</i></strong></a
             >
-            es una rama especial para crear un sitio web a tu proyecto alojado
+            Es una rama especial para crear un sitio web a tu proyecto alojado
             directamente en tu repositorio de GitHub.
           </p>
           <ul>
@@ -777,6 +836,7 @@
     git branch gh-pages
     git checkout gh-pages
 
+    # No es necesario agregar el origin remoto dado que ya fue creado al realizar el primer commit
     git remote add origin https://github.com/usuario/repositorio.git
     git push origin gh-pages
 
@@ -884,6 +944,69 @@
     <hr />
     <article id="git-17">
       <section class="git-seccion">
+        <h2>Configurando una segunda cuenta local de Git</h2>
+        <div>
+          <p></p>
+        </div>
+      </section>
+    </article>
+    <hr />
+    <article id="git-18">
+      <section class="git-seccion">
+        <h2>Agregando Remotes para colaborar</h2>
+        <div>
+          <p></p>
+        </div>
+      </section>
+      <hr />
+    </article>
+    <article id="git-19">
+      <section class="git-seccion">
+        <h2>Haciendo cambios y creando una rama para colaborar</h2>
+        <div>
+          <p></p>
+        </div>
+      </section>
+      <hr />
+    </article>
+    <article id="git-20">
+      <section class="git-seccion">
+        <h2>Solicitando un Pull Request</h2>
+        <div>
+          <p></p>
+        </div>
+      </section>
+      <hr />
+    </article>
+    <article id="git-21">
+      <section class="git-seccion">
+        <h2>Aceptando un Pull Request</h2>
+        <div>
+          <p></p>
+        </div>
+      </section>
+      <hr />
+    </article>
+    <article id="git-22">
+      <section class="git-seccion">
+        <h2>Pasos finales en la cuenta que acepto el Pull Request</h2>
+        <div>
+          <p></p>
+        </div>
+      </section>
+      <hr />
+    </article>
+    <article id="git-23">
+      <section class="git-seccion">
+        <h2>Pasos finales en la cuenta que hizo el Pull Request</h2>
+        <div>
+          <p></p>
+        </div>
+      </section>
+      <hr />
+    </article>
+    <article id="git-24">
+      <section class="git-seccion">
         <h2>Aprender más</h2>
         <div>
           <p>
@@ -932,7 +1055,7 @@
       <hr />
     </article>
     <hr />
-    <article id="git-18">
+    <article id="git-25">
       <section class="git-seccion">
         <h2>Prácticas personales</h2>
         <div>
