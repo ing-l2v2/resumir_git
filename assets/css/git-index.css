@@ -2,7 +2,7 @@
   padding: 1rem;
 }
 .abbr-for-pretty-format {
-  min-width: 80vw;
+  width: 80vw;
   margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
@@ -11,12 +11,36 @@
 }
 .abbr-for-pretty-format div {
   width: calc(100% / 4);
+  height: 100%;
   text-align: center;
   align-self: center;
   font-weight: bold;
   font-size: 1.2rem;
   height: 3rem;
+  border: thin solid #000;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
+.abbr-for-pretty-format abbr {
+  position: relative;
+}
+.abbr-for-pretty-format abbr:hover::after {
+  position: absolute;
+  bottom: 70%;
+  left: 100%;
+  display: block;
+  padding: 0.6rem;
+  background: #000;
+  color: #fff;
+  content: attr(data-title);
+  font-size: 0.9rem;
+  font-weight: 600;
+  width: 150px;
+  white-space: pre-wrap;
+}
+
 .git-card-row > div:first-child {
   padding: 1rem;
 }
@@ -46,7 +70,7 @@
     width: 48%;
   }
   .abbr-for-pretty-format {
-    width: 100%;
+    width: 90%;
   }
   .abbr-for-pretty-format div {
     width: 12%;

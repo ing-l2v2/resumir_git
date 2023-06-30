@@ -600,29 +600,33 @@
           </code></pre>
           <h4>Opciones utiles de --pretty=format</h4>
           <div class="abbr-for-pretty-format">
-            <div><abbr title="Hash de la confirmación">%H</abbr></div>
-            <div><abbr title="Hash de la confirmación abreviado">%h</abbr></div>
-            <div><abbr title="Hash del árbol">%T</abbr></div>
-            <div><abbr title="Hash del árbol abreviado">%t</abbr></div>
+            <div><abbr data-title="Hash de la confirmación">%H</abbr></div>
             <div>
-              <abbr title="Hashes de las confirmaciones padre">%P</abbr>
+              <abbr data-title="Hash de la confirmación abreviado">%h</abbr>
+            </div>
+            <div><abbr data-title="Hash del árbol">%T</abbr></div>
+            <div><abbr data-title="Hash del árbol abreviado">%t</abbr></div>
+            <div>
+              <abbr data-title="Hashes de las confirmaciones padre">%P</abbr>
             </div>
             <div>
-              <abbr title="Hashes de las confirmaciones padre abreviados"
+              <abbr data-title="Hashes de las confirmaciones padre abreviados"
                 >%p</abbr
               >
             </div>
-            <div><abbr title="Author name">%an</abbr></div>
-            <div><abbr title="Author email">%ae</abbr></div>
-            <div><abbr title="Fecha de autoría">%ad</abbr></div>
-            <div><abbr title="Fecha de autoría relativa">%ar</abbr></div>
-            <div><abbr title="Nombre del confirmador">%cn</abbr></div>
+            <div><abbr data-title="Author name">%an</abbr></div>
+            <div><abbr data-title="Author email">%ae</abbr></div>
+            <div><abbr data-title="Fecha de autoría">%ad</abbr></div>
+            <div><abbr data-title="Fecha de autoría relativa">%ar</abbr></div>
+            <div><abbr data-title="Nombre del confirmador">%cn</abbr></div>
             <div>
-              <abbr title="Dirección de correo del confirmador">%ce</abbr>
+              <abbr data-title="Dirección de correo del confirmador">%ce</abbr>
             </div>
-            <div><abbr title="Fecha de confirmación">%cd</abbr></div>
-            <div><abbr title="Fecha de confirmación, relativa">%cr</abbr></div>
-            <div><abbr title="Asunto">%s</abbr></div>
+            <div><abbr data-title="Fecha de confirmación">%cd</abbr></div>
+            <div>
+              <abbr data-title="Fecha de confirmación, relativa">%cr</abbr>
+            </div>
+            <div><abbr data-title="Asunto">%s</abbr></div>
           </div>
         </div>
       </section>
@@ -670,13 +674,16 @@
           </p>
           <pre class="git-pre-wrap"><code>
     cd carpeta-repositorio
-    <strong>mv .git/config ~/saved_git_config</strong>
+    # La ~ es equivalente %USERPROFILE%, mover .git/config hacia el ~
+    <strong>mv .git/config ~/guardado_git_config</strong>
+    # Eliminar directorio .git de forma recursiva
     rm -rf .git
     git init
     git branch -M main
     git add .
     git commit -m "Commit inicial"
-    mv ~/saved_git_config .git/config
+    # Recuperar mediante mover al directorio .git el archivo de configuracion guardado en el ~
+    <strong>mv ~/guardado_git_config .git/config</strong>
     <strong>git push --force origin main</strong>
           </code></pre>
         </div>
