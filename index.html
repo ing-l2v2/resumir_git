@@ -813,6 +813,85 @@
       </section>
     </article>
     <hr />
+    <article id="git-14-2">
+      <section class="git-seccion">
+        <h2>Firmando su trabajo</h2>
+        <div>
+          <p>
+            $ <strong>gpg --list-keys</strong> # listar las llaves personales
+            instaladas<br />
+            $ <strong>gpg --gen-key</strong> # generar una nueva llave privada
+            <br />
+            $
+            <strong>
+              git config --global user.signingkey
+              D7F60C5ED2ADA3C288E2BC806F196175773176B1
+            </strong>
+          </p>
+          <h3>Firmando tags</h3>
+          <p>
+            Una vez configurada una llave privada, puede usarse para firmar
+            tags, usando -s en lugar de -a <br />
+            $ <strong>$ git tag -s v1.5.0 -m 'mi firma 1.5 tag'</strong> <br />
+            Si ejecutas git show en ese tag puedes ver tu firma gpg adjunta a el
+            <br />
+            $ <strong>git show v1.5.0</strong>
+          </p>
+          <h3>Verificando Tags</h3>
+          <p>
+            Para verificar un tag firmado, se necesita la clave pública guardada
+            del usuario para que funcione de forma apropiada, sino se obtiene un
+            error. <br />
+            $ <strong>git tag -v v1.4.2.1</strong>
+          </p>
+          <h3>Firmando commits</h3>
+          <p>
+            Para ello se agrega un -S a la ejecución del commit <br />
+            $ <strong>git commit -a -S -m 'signed commit'</strong> <br />
+            Para ver y verificar firmas con la opcion de git log, donde se
+            detallara la gpg de existir <br />
+            $ <strong>git log --show-signature -1</strong> <br />
+            Adicionalmente, puedes configurar git log para verificar cualquier
+            firma que encuentre y listarlas en su salida con el formato %G?.
+            <br />
+            $ <strong>git log --pretty="format:%h %G? %aN %s"</strong> <br />
+            En Git 1.8.3 y posteriores, "git merge" y "git pull" pueden ser
+            configurados para inspeccionar y rechazar cualquier commit que no
+            adjunte una firma GPG de confianza con el comando
+            <small><strong>--verify-signatures</strong></small
+            >. <br />
+            Pero cuando se fusiona una rama y esta contiene commits que no están
+            firmados, aunque sean válidos, la fusión no funcionará <br />
+            $
+            <strong>
+              git merge --verify-signatures non-verify <br />
+              fatal: Commit ab06180 does not have a GPG signature.
+            </strong>
+            <br />
+            Si una fusión contiene solo commits válidos y firmados, el comando
+            merge mostrará todas las firmas que ha revisado y después procederá
+            con la fusión. <br />$
+            <strong>git merge --verify-signatures signed-branch</strong> <br />
+            También se puede utilizar la opción -S junto con el mismo comando
+            git merge para firmar el commit resultante. El siguiente ejemplo
+            verifica que cada commit en la rama por ser fusionada esté firmado y
+            también firma el commit resultado de la fusión.
+            <br />
+            $ <strong>git merge --verify-signatures -S signed-branch</strong>
+          </p>
+          <h3>Todos deben firmar</h3>
+          <p>
+            Firmar tags y commits es grandioso, pero si decides usar esto en tu
+            flujo de trabajo normal, tendrás que asegurarte que todos en el
+            equipo entiendan cómo hacerlo. Si no, terminarás gastando mucho
+            tiempo ayudando a las personas a descubrir cómo reescribir sus
+            commits con versiones firmadas. Asegúrate de entender GPG y los
+            beneficios de firmar cosas antes de adoptarlo como parte de tu flujo
+            de trabajo normal.
+          </p>
+        </div>
+      </section>
+    </article>
     <article id="git-15">
       <section class="git-seccion">
         <h2>GitHub Pages</h2>
@@ -859,14 +938,20 @@
           <p>A continuación describo el proceso de colaboración en GitHub.</p>
           <ol>
             <li>
-              Forkea el repositorio en el que quieras colaborar, para hacerlo,
-              sigue las instrucciones de este
+              Forkea el repositorio en el que quieras colaborar, el repositorio
+              debe ser público para poder forkearlo, para hacerlo, sigue las
+              instrucciones de este
               <a
                 href="https://docs.github.com/en/get-started/quickstart/fork-a-repo"
                 target="_blank"
               >
                 enlace </a
-              >.
+              >, esto se realiza en el github del cliente que colaborará con
+              cambios apuntando hacia el repositorio del cliente origen.<br />
+              Ej. cliente l2v2 abre una ventana github con la url de l2v2blue
+              https://github.com/l2v2blue/resumir_git y pulsa fork, pudiendo
+              mantener el nombre del repositorio o cambiarlo. Tomar solo la rama
+              main o todas las ramas declaradas y Crear Fork.
             </li>
             <li>
               Una vez forkeado el repositorio en tu cuenta de GitHub, clónalo en
@@ -894,6 +979,7 @@
               <a
                 href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 enlace
               </a>
@@ -946,7 +1032,15 @@
       <section class="git-seccion">
         <h2>Configurando una segunda cuenta local de Git</h2>
         <div>
-          <p></p>
+          <p>
+            $ <strong>git --local user.name "Leonel Villa (Fidenslat)"</strong
+            ><br />
+            $ <strong>git --local user.email lvilla@fidenslat.com</strong>
+            <br />
+            $ <strong>git --local -e</strong><br />
+            $ <strong>git --local user.username "l2v2"</strong><br />
+            $ <strong>git --local user.password "lv..2021"</strong><br />
+          </p>
         </div>
       </section>
     </article>
