@@ -1,3 +1,15 @@
+:root {
+  --bg-hard-1: rgba(54, 33, 62, 1);
+  --bg-hard-1-7: rgba(54, 33, 62, 0.7);
+  --bg-hard-2: rgba(85, 73, 113, 1);
+  --bg-hard-2-7: rgba(85, 73, 113, 0.7);
+  --bg-half-3: rgba(99, 118, 141, 1);
+  --bg-half-3-7: rgba(99, 118, 141, 0.7);
+  --bg-light-4: rgba(184, 243, 255, 1);
+  --bg-light-4-7: rgba(184, 243, 255, 0.7);
+  --bg-light-5: rgba(216, 219, 226, 1);
+  --bg-light-5-7: rgba(216, 219, 226, 0.7);
+}
 .git-seccion {
   padding: 1rem;
 }
@@ -53,6 +65,153 @@
   overflow: hidden;
   font-size: 1.1rem;
 }
+.git-header {
+  background-color: var(--bg-hard-1);
+  color: var(--bg-light-4);
+  padding: 0.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.git-header h1 {
+  text-align: center;
+}
+[id^="git-"] {
+  scroll-margin-top: 9.5ex;
+  padding: 2rem 1.2rem 2rem;
+  margin-top: -1rem;
+  /* min-height: 100vh; */
+}
+#git-00 {
+  scroll-margin-top: 10ex;
+}
+#git-00 h2 {
+  text-align: center;
+}
+#git-00 ul {
+  padding: 0 2rem;
+  list-style-type: decimal;
+  column-count: 2;
+}
+#git-00 ul li {
+  margin: 0.2rem 0;
+}
+#git-00 ul li a {
+  margin-top: 10px;
+  text-decoration: none;
+  color: var(--bg-hard-1);
+}
+#git-00 ul li a:hover {
+  color: var(--bg-light-5);
+  background-color: var(--bg-hard-1);
+  opacity: 0.75;
+  padding: 0.2rem 0.4rem;
+}
+.git-indice {
+  position: relative;
+  padding: 0.28rem 1rem;
+  border: thin solid var(--bg-hard-2);
+  background-color: var(--bg-hard-1);
+  color: var(--bg-light-4);
+  opacity: 0.65;
+  display: block;
+  width: 50vw;
+  text-align: center;
+  margin: 0.5rem auto;
+  text-decoration: none;
+  letter-spacing: 0.06rem;
+  /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5); */
+  transition: background-color 0.8s ease-in-out 150ms,
+    border-width 0.8s ease-in-out 150ms, opacity 0.8s ease-in-out 150ms,
+    border-radius 0.8s ease-in-out 150ms;
+  overflow: hidden;
+}
+.git-indice:hover {
+  background-color: var(--bg-half-3);
+  opacity: 0.9;
+  border-radius: 0.2rem;
+}
+.git-indice::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  right: 6px;
+  bottom: 2px;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+.git-indice span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, var(--bg-hard-2), var(--bg-light-5));
+  animation: animaBoton1 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animaBoton1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.git-indice span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--bg-hard-2), var(--bg-light-5));
+  animation: animaBoton2 2s linear infinite;
+}
+@keyframes animaBoton2 {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.git-indice span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, var(--bg-hard-2), var(--bg-light-5));
+  animation: animaBoton3 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animaBoton3 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.git-indice span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to top, var(--bg-hard-2), var(--bg-light-5));
+  animation: animaBoton4 2s linear infinite;
+}
+@keyframes animaBoton4 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .git-card-row {
     display: flex;
@@ -74,5 +233,10 @@
   }
   .abbr-for-pretty-format div {
     width: 12%;
+  }
+  .git-indice {
+    width: 20vw;
+    margin: 0.5rem;
+    margin-left: auto;
   }
 }

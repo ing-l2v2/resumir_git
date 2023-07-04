@@ -3,16 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Entre 55 y 65 caracteres -->
     <title>Git & GitHub</title>
+    <!-- Máximo 165 caracteres -->
+    <meta name="description" content="Conceptos para iniciar en Git & GitHub" />
+    <!-- Parámetros para CEO -->
+    <link rel="canonical" href="https://tudomino.com/la-url-canonical" />
+    <link rel="icon" href="assets/img/animal-bird-domestic-svgrepo-com.svg" />
+    <link
+      rel="apple-touch-icon"
+      href="assets/img/animal-bird-domestic-svgrepo-com.svg"
+    />
+    <meta name="theme-color" content="#F60" />
+    <meta property="og:title" content="Git & GitHub" />
+    <meta
+      property="og:description"
+      content="Conceptos para iniciar en Git & GitHub"
+    />
+    <meta
+      property="og:image"
+      content="http://tudominio.com/img/nombre-imagen.png"
+    />
+    <meta property="og:url" content="http://tudominio.com/index.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@leonelvilla" />
+    <!-- Fin de parámetros para CEO -->
+
     <link rel="stylesheet" href="./assets/css/style-for-git.css" />
     <link rel="stylesheet" href="./assets/css/git-index.css" />
   </head>
   <body>
-    <article id="git-00">
+    <header class="git-header">
       <h1>Git & GitHub</h1>
+      <a href="#git-00" class="git-indice">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Indice de contenidos
+      </a>
+    </header>
+    <article id="git-00">
       <section class="git-seccion">
         <h2>Indice temático</h2>
-        <ol>
+        <ul>
           <li><a href="#git-01">Configurando Git por primera vez</a></li>
           <li>
             <a href="#git-02">Inicializar Git en un directorio local</a>
@@ -63,7 +97,7 @@
           </li>
           <li><a href="#git-24">Aprender más</a></li>
           <li><a href="#git-25">Prácticas personales</a></li>
-        </ol>
+        </ul>
       </section>
     </article>
     <article id="git-01">
@@ -892,6 +926,7 @@
         </div>
       </section>
     </article>
+    <hr />
     <article id="git-15">
       <section class="git-seccion">
         <h2>GitHub Pages</h2>
@@ -948,20 +983,43 @@
                 enlace </a
               >, esto se realiza en el github del cliente que colaborará con
               cambios apuntando hacia el repositorio del cliente origen.<br />
-              Ej. cliente l2v2 abre una ventana github con la url de l2v2blue
-              https://github.com/l2v2blue/resumir_git y pulsa fork, pudiendo
-              mantener el nombre del repositorio o cambiarlo. Tomar solo la rama
-              main o todas las ramas declaradas y Crear Fork.
+              Ej. cliente l2v2 abre una ventana github con la url del cliente
+              l2v2blue https://github.com/l2v2blue/resumir_git y pulsa fork,
+              pudiendo mantener el nombre del repositorio o cambiarlo. Tomar
+              solo la rama main o todas las ramas declaradas y Crear Fork.
             </li>
             <li>
-              Una vez forkeado el repositorio en tu cuenta de GitHub, clónalo en
-              tu equipo de cómputo.
+              Una vez forkeado el repositorio en tu cuenta de GitHub, clonarlo
+              en el equipo de cómputo local, desde la cuenta l2v2 en el caso
+              ejemplo.<br />
+              $
+              <strong>
+                git clone https://github.com/l2v2/resumir-git-l2v2.git
+              </strong>
             </li>
             <li>
               En el repositorio local hay que configurar los orígenes remotos de
               tu nueva copía para tener ambos remotos, los originales (origin) y
               los de tu copia, para hacerlo, sigue las instrucciones de este
-              enlace.
+              <a href="#git-17">enlace</a>. <br />
+              $ <strong>git remote -v</strong> # visualiza las url de los fetch
+              y push <br />
+              $ <strong>git remote rename origin fork</strong> # Renombrar el
+              origin como fork para crear otro remoto del original
+              correspondiente al de l2v2blue <br />
+              $
+              <strong
+                >git remote add origin
+                https://github.com/l2v2blue/resumir_git.git</strong
+              >
+              # luego se tendrá dos origenes el fork y el origin <br />
+              $ <strong>git remote -v </strong> # genera como resultado <br />
+              <pre><code>
+                fork    https://github.com/l2v2/resumir-git-l2v2.git  (fetch)
+                fork    https://github.com/l2v2/resumir-git-l2v2.git  (push)
+                origin  https://github.com/l2v2blue/resumir_git.git  (fetch)
+                origin  https://github.com/l2v2blue/resumir_git.git  (push)
+              </code></pre>
             </li>
             <li>
               Crea una rama nueva en tu fork local para hacer tu colaboración, y
@@ -971,19 +1029,27 @@
                 href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork"
                 target="_blank"
                 >enlace</a
-              >.
+              >. <br />
+              $ <strong>git checkout -b rama-modificaciones-local</strong> #
+              Luego realizar las modificaciones en el codigo y guardar en la
+              rama. <br />
+              $
+              <strong
+                >git commit -a -m "Descripción de las modificaciones"</strong
+              ><br />
+              $ <strong>git push fork rama-modificaciones-local</strong> #
+              Genera la rama en el fork de l2v2
             </li>
             <li>
-              Configura tu repositorio para que acepté cambios (pull requests),
+              Configurar repositorio para que acepté cambios (pull requests),
               para hacerlo, sigue las instrucciones de este
               <a
                 href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                enlace
-              </a>
-              .
+                enlace </a
+              >.
             </li>
             <li>
               Crea una pull request, para hacerlo, sigue las instrucciones de
@@ -992,16 +1058,54 @@
                 href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request"
                 target="_blank"
                 >enlace</a
-              >.
+              >.<br />
+              Haciendo la petición del pull-requests desde la cuenta de l2v2,
+              para que la cuenta propietario l2v2blue acepte el pull-requests.
+              <br />
+              Para esto con l2v2 (cuenta solicitante) dirigirse a menu
+              pull-requests/new pull-requests y detecta los cambios presentes en
+              la rama <small><strong>rama-modificaciones-local</strong></small
+              >. En comparando cambios indica
+              <small><strong>base repository</strong></small> se tomaria
+              l2v2blue/resumen_git, en
+              <small><strong>base</strong></small> definimos la rama base main,
+              en <small><strong>head repository</strong></small> se define el
+              colaborador l2v2/resume-git-l2v2 y en
+              <small><strong>compare</strong></small> se establece la rama a
+              compartir rama-modificaciones-local. <br />
+              Casi para finalizar se pulsa Crear pull-requests y se llena el
+              formulario con el mensaje que recibirá la cuenta propietario y
+              presionar el botón crear pull-requests, el estado quedará en OPEN.
             </li>
             <li>
               Espera a que el dueño del repositorio original, acepte tus
-              cambios.
+              cambios. <br />
+              El propietario recibirá una notificación en el icono en forma de
+              campana y al abrirlo se pueden revisar los commits recibidos y
+              revisarlos con el icono <small><strong>&lt;&gt;</strong></small
+              >. <br />
+              El files changed se visualiza lo que se agrega y se quita, al
+              asegurarse que estan correctas las correcciones se pulsa
+              <small><i>Merge pull request</i></small> y se
+              <small><i>Confirm merge</i></small> tambien se puede responder al
+              colaborador con un mensaje comentado. <br />
+              Cambiando el estado de OPEN a MERGED.
             </li>
             <li>
               Una vez que acepten tu pull request, es recomendable que borres la
               rama en la que trabajaste el cambio y actualices tu repositorio
-              forkeado, con los cambios del repositorio original.
+              forkeado, con los cambios del repositorio original. <br />
+              En la cuenta propietario realizar un git pull en la rama main
+              <br />
+              $ <strong>git checkout main</strong> <br />
+              $ <strong>git pull origin main</strong> # descargar de origin a
+              main, tanto en l2v2 como en l2v2blue <br />
+              $ <strong>git push fork main</strong> # subir hacia fork que es la
+              copia de l2v2 <br />
+              $ <strong>git branch -d rama-modificaciones-local</strong> #
+              eliminar la rama local <br />
+              $ <strong>git branch --delete rama-modificaciones-local</strong> #
+              Eliminar la rama en el remote de l2v2
             </li>
           </ol>
           <p>
@@ -1037,11 +1141,10 @@
             ><br />
             $ <strong>git --local user.email lvilla@fidenslat.com</strong>
             <br />
-            <<<<<<< HEAD $ <strong>git --local -e</strong><br />
+            $ <strong>git --local -e</strong><br />
             $ <strong>git --local user.username "l2v2"</strong><br />
             $ <strong>git --local user.password "lv..2021"</strong><br />
-            ======= $ <strong>git --local -e</strong>
-            >>>>>>> f3fa001eb4002e86f75bef1835f98b5daa347068
+            $ <strong>git --local -e</strong>
           </p>
         </div>
       </section>
@@ -1051,7 +1154,30 @@
       <section class="git-seccion">
         <h2>Agregando Remotes para colaborar</h2>
         <div>
-          <p></p>
+          <p>
+            En el repositorio local hay que configurar los orígenes remotos de
+            tu nueva copía para tener ambos remotos, los originales (origin) y
+            los de tu copia, para hacerlo, sigue las instrucciones de este
+            <a href="#git-17">enlace</a>. <br />
+            $ <strong>git remote -v</strong> # visualiza las url de los fetch y
+            push <br />
+            $ <strong>git remote rename origin fork</strong> # Renombrar el
+            origin como fork para crear otro remoto del original correspondiente
+            al de l2v2blue <br />
+            $
+            <strong
+              >git remote add origin
+              https://github.com/l2v2blue/resumir_git.git</strong
+            >
+            # luego se tendrá dos origenes el fork y el origin <br />
+            $ <strong>git remote -v </strong> # genera como resultado <br />
+          </p>
+          <pre><code>
+            fork    https://github.com/l2v2/resumir-git-l2v2.git  (fetch)
+            fork    https://github.com/l2v2/resumir-git-l2v2.git  (push)
+            origin  https://github.com/l2v2blue/resumir_git.git  (fetch)
+            origin  https://github.com/l2v2blue/resumir_git.git  (push)
+          </code></pre>
         </div>
       </section>
       <hr />
@@ -1060,7 +1186,24 @@
       <section class="git-seccion">
         <h2>Haciendo cambios y creando una rama para colaborar</h2>
         <div>
-          <p></p>
+          <p>
+            Crea una rama nueva en tu fork local para hacer tu colaboración, y
+            sincrónizala con tu repositorio remoto, para hacerlo, sigue las
+            instrucciones de este
+            <a
+              href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork"
+              target="_blank"
+              >enlace</a
+            >. <br />
+            $ <strong>git checkout -b rama-modificaciones-local</strong> # Luego
+            realizar las modificaciones en el codigo y guardar en la rama.
+            <br />
+            $
+            <strong>git commit -a -m "Descripción de las modificaciones"</strong
+            ><br />
+            $ <strong>git push fork rama-modificaciones-local</strong> # Genera
+            la rama en el remote fork de l2v2
+          </p>
         </div>
       </section>
       <hr />
@@ -1069,7 +1212,26 @@
       <section class="git-seccion">
         <h2>Solicitando un Pull Request</h2>
         <div>
-          <p></p>
+          <p>
+            Haciendo la petición del pull-requests desde la cuenta de l2v2, para
+            que la cuenta propietario l2v2blue acepte el pull-requests. Esto se
+            realiza en GitHub.
+            <br />
+            Para esto con l2v2 (cuenta solicitante) dirigirse a menu
+            pull-requests/new pull-requests y detecta los cambios presentes en
+            la rama <small><strong>rama-modificaciones-local</strong></small
+            >. En comparando cambios indica
+            <small><strong>base repository</strong></small> se tomaria
+            l2v2blue/resumen_git, en
+            <small><strong>base</strong></small> definimos la rama base main, en
+            <small><strong>head repository</strong></small> se define el
+            colaborador l2v2/resume-git-l2v2 y en
+            <small><strong>compare</strong></small> se establece la rama a
+            compartir rama-modificaciones-local. <br />
+            Casi para finalizar se pulsa Crear pull-requests y se llena el
+            formulario con el mensaje que recibirá la cuenta propietario y
+            presionar el botón crear pull-requests, el estado quedará en OPEN.
+          </p>
         </div>
       </section>
       <hr />
@@ -1078,7 +1240,20 @@
       <section class="git-seccion">
         <h2>Aceptando un Pull Request</h2>
         <div>
-          <p></p>
+          <p>
+            Espera a que el dueño del repositorio original, acepte tus cambios.
+            <br />
+            El propietario recibirá una notificación en el icono en forma de
+            campana y al abrirlo se pueden revisar los commits recibidos y
+            revisarlos con el icono <small><strong>&lt;&gt;</strong></small
+            >. <br />
+            El files changed se visualiza lo que se agrega y se quita, al
+            asegurarse que estan correctas las correcciones se pulsa
+            <small><i>Merge pull request</i></small> y se
+            <small><i>Confirm merge</i></small> tambien se puede responder al
+            colaborador con un mensaje comentado. <br />
+            Cambiando el estado de OPEN a MERGED.
+          </p>
         </div>
       </section>
       <hr />
@@ -1087,7 +1262,14 @@
       <section class="git-seccion">
         <h2>Pasos finales en la cuenta que acepto el Pull Request</h2>
         <div>
-          <p></p>
+          <p>
+            Una vez que aceptado el pull request, es recomendable que actualize
+            en su local, con los cambios del repositorio original. <br />
+            En la cuenta propietario realizar un git pull en la rama main <br />
+            $ git checkout main <br />
+            $ git pull origin main # descargar de origin a main, tanto en l2v2
+            como en l2v2blue
+          </p>
         </div>
       </section>
       <hr />
@@ -1096,7 +1278,22 @@
       <section class="git-seccion">
         <h2>Pasos finales en la cuenta que hizo el Pull Request</h2>
         <div>
-          <p></p>
+          <p>
+            Una vez que acepten tu pull request, es recomendable que borres la
+            rama en la que trabajaste el cambio y actualices tu repositorio
+            forkeado, con los cambios del repositorio original. <br />
+            En la cuenta colaborador realizar un git pull en la rama main
+            <br />
+            $ <strong>git checkout main</strong> <br />
+            $ <strong>git pull origin main</strong> # descargar de origin a
+            main, tanto en l2v2 como en l2v2blue <br />
+            $ <strong>git push fork main</strong> # subir hacia fork que es la
+            copia de l2v2 <br />
+            $ <strong>git branch -d rama-modificaciones-local</strong> #
+            eliminar la rama local <br />
+            $ <strong>git branch --delete rama-modificaciones-local</strong> #
+            Eliminar la rama en el remote de l2v2
+          </p>
         </div>
       </section>
       <hr />
@@ -1145,10 +1342,18 @@
               >
               - progit.pdf
             </li>
+            <li>
+              <a
+                href="https://jonmircha.com/git"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Documentación de referencia
+              </a>
+            </li>
           </ul>
         </div>
       </section>
-      <hr />
     </article>
     <hr />
     <article id="git-25">
@@ -1176,8 +1381,5 @@
         </div>
       </section>
     </article>
-    <a href="https://jonmircha.com/git" target="_blank"
-      >Documentacion de referencia</a
-    >
   </body>
 </html>
