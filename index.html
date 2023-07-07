@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Entre 55 y 65 caracteres -->
-    <title>Git & GitHub</title>
+    <!-- Entre 55 y 70 caracteres -->
+    <title>
+      Git & GitHub config, init, pull requests, rama pages con ejemplos
+    </title>
     <!-- Máximo 165 caracteres -->
-    <meta name="description" content="Conceptos para iniciar en Git & GitHub" />
+    <meta
+      name="description"
+      content="Git & GitHub, Cómo y porque usar controlador de versiones Git, Desde configuración e inicialiación hasta implementar Pull Requests, incluye crear rama GitHub pages"
+    />
     <!-- Parámetros para CEO -->
     <link rel="canonical" href="https://ing-l2v2.github.io/resumir_git" />
     <link rel="icon" href="assets/img/animal-bird-domestic-svgrepo-com.svg" />
@@ -15,10 +20,13 @@
       href="assets/img/animal-bird-domestic-svgrepo-com.svg"
     />
     <meta name="theme-color" content="#F60" />
-    <meta property="og:title" content="Git & GitHub" />
+    <meta
+      property="og:title"
+      content="Git & GitHub config, init, pull requests, rama pages con ejemplos"
+    />
     <meta
       property="og:description"
-      content="Conceptos para iniciar en Git & GitHub"
+      content="Git & GitHub, Cómo y porque usar controlador de versiones Git, Desde configuración e inicialiación hasta implementar Pull Requests, incluye crear rama GitHub pages"
     />
     <meta
       property="og:image"
@@ -37,7 +45,7 @@
   </head>
   <body>
     <header class="git-header">
-      <h1>Git & GitHub</h1>
+      <h1>Git & GitHub config, init, pull requests, rama pages con ejemplos</h1>
       <a href="#git-00" class="git-indice">
         <span></span>
         <span></span>
@@ -46,76 +54,77 @@
         Indice de contenidos
       </a>
     </header>
-    <article id="git-00">
-      <section class="git-seccion">
-        <h2>Indice temático</h2>
-        <ul>
-          <li><a href="#git-01">Configurando Git por primera vez</a></li>
-          <li>
-            <a href="#git-02">Inicializar Git en un directorio local</a>
-          </li>
-          <li><a href="#git-03">Flujo básico de Git</a></li>
-          <li>
-            <a href="#git-04">Master a main, cambio de nombre de rama</a>
-          </li>
-          <li><a href="#git-05">Ignorar archivos</a></li>
-          <li><a href="#git-06">Clonar repositorios</a></li>
-          <li><a href="#git-07">Ramas</a></li>
-          <li><a href="#git-08">Fusiones</a></li>
-          <li><a href="#git-09">Cambios</a></li>
-          <li><a href="#git-10">Registro del historial</a></li>
-          <li><a href="#git-11">Reseteo de historial</a></li>
-          <li><a href="#git-12">Resetear un repositorio</a></li>
-          <li><a href="#git-13">Remotos</a></li>
-          <li><a href="#git-14">Etiquetas</a></li>
-          <li><a href="#git-14-1">Alias de Git</a></li>
-          <li><a href="#git-15">GitHub Pages</a></li>
-          <li><a href="#git-16">Colaboración en GitHub</a></li>
-          <li>
-            <a href="#git-17">Configurando una segunda cuenta local de Git</a>
-          </li>
-          <li>
-            <a href="#git-18">Agregando Remotes para colaborar</a>
-          </li>
-          <li>
-            <a href="#git-19"
-              >Haciendo cambios y creando una rama para colaborar</a
-            >
-          </li>
-          <li>
-            <a href="#git-20">Solicitando un Pull Request</a>
-          </li>
-          <li>
-            <a href="#git-21">Aceptando un Pull Request</a>
-          </li>
-          <li>
-            <a href="#git-22"
-              >Pasos finales en la cuenta que acepto el Pull Request</a
-            >
-          </li>
-          <li>
-            <a href="#git-23"
-              >Pasos finales en la cuenta que hizo el Pull Request</a
-            >
-          </li>
-          <li><a href="#git-24">Aprender más</a></li>
-          <li><a href="#git-25">Prácticas personales</a></li>
-        </ul>
-      </section>
-    </article>
-    <article id="git-01">
-      <section class="git-seccion">
-        <h2>Configurando Git por Primera vez</h2>
-        <p>
-          Al ingresar un comando y no retornar ningun error, significa que todo
-          va bien.
-        </p>
-        <p>
-          <strong><i>--Global</i></strong> significa que configuras para todas
-          las carpetas de tu sistema operativo. En un repositorio se pueden
-          tener mas de dos cuentas
-        </p>
-        <pre class="git-pre-wrap"><code>
+    <main>
+      <article id="git-00">
+        <section class="git-seccion">
+          <h2>Indice temático</h2>
+          <ul>
+            <li><a href="#git-01">Configurando Git por primera vez</a></li>
+            <li>
+              <a href="#git-02">Inicializar Git en un directorio local</a>
+            </li>
+            <li><a href="#git-03">Flujo básico de Git</a></li>
+            <li>
+              <a href="#git-04">Master a main, cambio de nombre de rama</a>
+            </li>
+            <li><a href="#git-05">Ignorar archivos</a></li>
+            <li><a href="#git-06">Clonar repositorios</a></li>
+            <li><a href="#git-07">Ramas</a></li>
+            <li><a href="#git-08">Fusiones</a></li>
+            <li><a href="#git-09">Cambios</a></li>
+            <li><a href="#git-10">Registro del historial</a></li>
+            <li><a href="#git-11">Reseteo de historial</a></li>
+            <li><a href="#git-12">Resetear un repositorio</a></li>
+            <li><a href="#git-13">Remotos</a></li>
+            <li><a href="#git-14">Etiquetas</a></li>
+            <li><a href="#git-14-1">Alias de Git</a></li>
+            <li><a href="#git-15">GitHub Pages</a></li>
+            <li><a href="#git-16">Colaboración en GitHub</a></li>
+            <li>
+              <a href="#git-17">Configurando una segunda cuenta local de Git</a>
+            </li>
+            <li>
+              <a href="#git-18">Agregando Remotes para colaborar</a>
+            </li>
+            <li>
+              <a href="#git-19"
+                >Haciendo cambios y creando una rama para colaborar</a
+              >
+            </li>
+            <li>
+              <a href="#git-20">Solicitando un Pull Request</a>
+            </li>
+            <li>
+              <a href="#git-21">Aceptando un Pull Request</a>
+            </li>
+            <li>
+              <a href="#git-22"
+                >Pasos finales en la cuenta que acepto el Pull Request</a
+              >
+            </li>
+            <li>
+              <a href="#git-23"
+                >Pasos finales en la cuenta que hizo el Pull Request</a
+              >
+            </li>
+            <li><a href="#git-24">Aprender más</a></li>
+            <li><a href="#git-25">Prácticas personales</a></li>
+          </ul>
+        </section>
+      </article>
+      <article id="git-01">
+        <section class="git-seccion">
+          <h2>Configurando Git por Primera vez</h2>
+          <p>
+            Al ingresar un comando y no retornar ningun error, significa que
+            todo va bien.
+          </p>
+          <p>
+            <strong><i>--Global</i></strong> significa que configuras para todas
+            las carpetas de tu sistema operativo. En un repositorio se pueden
+            tener mas de dos cuentas
+          </p>
+          <pre class="git-pre-wrap"><code>
     git --version
     git config --global user.name "Ing. Leonel Villa"
     git config --global user.username "ing-l2v2"
@@ -140,14 +149,14 @@
     # ver todas las opciones de la configuración en el navegador <strong>git help &lt;comand&gt;</strong>
     git help config
         </code></pre>
-      </section>
-    </article>
-    <hr />
-    <article id="git-02">
-      <section class="git-seccion">
-        <h2>Inicializar Git en un directorio local</h2>
-        <p>Crear o desplazarse hasta la carpeta donde se inicializará git</p>
-        <pre class="git-pre-wrap"><code>
+        </section>
+      </article>
+      <hr />
+      <article id="git-02">
+        <section class="git-seccion">
+          <h2>Inicializar Git en un directorio local</h2>
+          <p>Crear o desplazarse hasta la carpeta donde se inicializará git</p>
+          <pre class="git-pre-wrap"><code>
   mkdir carpeta
   cd carpeta
   touch README.md     <strong>opcional</strong> contiene información y documentación del repositorio
@@ -156,65 +165,65 @@
   git init
   code .
         </code></pre>
-      </section>
-    </article>
-    <hr />
-    <article id="git-03">
-      <section class="git-card-row">
-        <div>
-          <h2>Flujo Básico</h2>
-          <p>
-            Flujo de Git, consta de tres estados locales y uno de forma remota
-            cuando accedemos al codigo centralizado:
-            <span class="strong"><i>modified</i></span
-            >, <span class="strong"><i>staged</i></span
-            >, <span class="strong"><i>committed</i></span> y
-            <span class="strong"><i>remote</i></span> a cada uno le corresponde
-            un área de trabajo.
-          </p>
-          <ol>
-            <li>
-              <span class="strong"><i>Working Directory:</i></span> Area
-              correspondiente al estado
+        </section>
+      </article>
+      <hr />
+      <article id="git-03">
+        <section class="git-card-row">
+          <div>
+            <h2>Flujo Básico</h2>
+            <p>
+              Flujo de Git, consta de tres estados locales y uno de forma remota
+              cuando accedemos al codigo centralizado:
               <span class="strong"><i>modified</i></span
-              >, es la carpeta local de PC donde se almacenan los archivos del
-              proyecto.
-            </li>
-            <li>
-              <spam class="strong"><i>Staging Area</i></spam
-              >: Es el área correspondiente al estado
-              <span class="strong"><i>staged</i></span> también se le llama
-              index por que es el área donde git indexa y agrega los cambios
-              realizados en los archivos previos a comprometerlos en su
-              registro. <strong>INDEX | STAGING</strong>. Estado de indice o
-              estado de ensayo.
-            </li>
-            <li>
-              <spam class="strong"><i>Local Repository</i></spam
-              >: Es el área correspondiente al estado
-              <spam class="strong"><i>committed</i></spam
-              >, donde los cambios ya se han registrado en el repositorio de git
-              también se le llama
-              <spam class="strong"><i>HEAD o Local</i></spam> por que indica en
-              qué cambio se encuentra el puntero del repositorio.
-            </li>
-            <li>
-              <spam class="strong"><i>Remote Repository</i></spam
-              >: Es el área correspondiente al estado
-              <spam class="strong"><i>remote</i></spam> y es el directorio
-              remoto donde almacenamos los archivos del proyecto en alguna
-              plataforma web como GitHub, GitLab, BitBucket. Git denomina
-              <spam class="strong"><i>origin</i></spam> al repositorio remoto.
-              <strong>( GitHub | Remote )</strong>
-            </li>
-          </ol>
-        </div>
-        <div>
-          <img src="./assets/img/git-flow.png" alt="Flujo básico de git" />
-        </div>
-      </section>
-      <section class="git-seccion">
-        <pre class="git-pre-wrap"><code>
+              >, <span class="strong"><i>staged</i></span
+              >, <span class="strong"><i>committed</i></span> y
+              <span class="strong"><i>remote</i></span> a cada uno le
+              corresponde un área de trabajo.
+            </p>
+            <ol>
+              <li>
+                <span class="strong"><i>Working Directory:</i></span> Area
+                correspondiente al estado
+                <span class="strong"><i>modified</i></span
+                >, es la carpeta local de PC donde se almacenan los archivos del
+                proyecto.
+              </li>
+              <li>
+                <spam class="strong"><i>Staging Area</i></spam
+                >: Es el área correspondiente al estado
+                <span class="strong"><i>staged</i></span> también se le llama
+                index por que es el área donde git indexa y agrega los cambios
+                realizados en los archivos previos a comprometerlos en su
+                registro. <strong>INDEX | STAGING</strong>. Estado de indice o
+                estado de ensayo.
+              </li>
+              <li>
+                <spam class="strong"><i>Local Repository</i></spam
+                >: Es el área correspondiente al estado
+                <spam class="strong"><i>committed</i></spam
+                >, donde los cambios ya se han registrado en el repositorio de
+                git también se le llama
+                <spam class="strong"><i>HEAD o Local</i></spam> por que indica
+                en qué cambio se encuentra el puntero del repositorio.
+              </li>
+              <li>
+                <spam class="strong"><i>Remote Repository</i></spam
+                >: Es el área correspondiente al estado
+                <spam class="strong"><i>remote</i></spam> y es el directorio
+                remoto donde almacenamos los archivos del proyecto en alguna
+                plataforma web como GitHub, GitLab, BitBucket. Git denomina
+                <spam class="strong"><i>origin</i></spam> al repositorio remoto.
+                <strong>( GitHub | Remote )</strong>
+              </li>
+            </ol>
+          </div>
+          <div>
+            <img src="./assets/img/git-flow.png" alt="Flujo básico de git" />
+          </div>
+        </section>
+        <section class="git-seccion">
+          <pre class="git-pre-wrap"><code>
     # agregar los cambios de un archivo al staged
     <strong>git add archivo/directorio</strong>
     # agregar todos los cambios de todos los archivos al staged
@@ -248,123 +257,124 @@
     #para descargar los cambios del repositorio remoto al local
     <strong>git pull</strong>
         </code></pre>
-      </section>
-      <section class="git-seccion">
-        <div>
-          <p>
-            Formas de ejecutar add <br />$<small
-              ><strong> git add .</strong></small
-            >
-            /* Agrega todos los cambios */ <br />$
-            <small><strong> git add file1.txt *.java file2.txt</strong></small
-            ><br />$
-            <small
-              ><strong>
-                git add nom_path1 nom_path2/*.js nom_path3</strong
-              ></small
-            >
-            <br />$
-            <small
-              ><strong>
-                git add nom_path1 nom_path2/*.js nom_path3</strong
-              ></small
-            >
-            <br />Descartar cambios en working directory antes de pasar al
-            Staging <br />$ <strong>git restore &lt;file&gt;</strong><br />
-            Eliminando archivos <br />$ <strong>git rm &lt;file&gt;</strong> #
-            Elimina archivos rastreados del staging y del working directory
-            <br />$ <strong>rm &lt;file&gt;</strong> # Elimina archivos pero no
-            del staging luego ejecutar git add . <br />
-            $ <strong>git rm --cached &lt;file&gt;</strong> # Elimina archivos
-            del staging pero mantiene en working directory <br />
-            Renombrar archivos <br />
-            $ <strong>git mv &lt;file_from&gt; &lt;file_to&gt;</strong> #
-            Renombrar archivos
-          </p>
+        </section>
+        <section class="git-seccion">
+          <div>
+            <p>
+              Formas de ejecutar add <br />$<small
+                ><strong> git add .</strong></small
+              >
+              /* Agrega todos los cambios */ <br />$
+              <small><strong> git add file1.txt *.java file2.txt</strong></small
+              ><br />$
+              <small
+                ><strong>
+                  git add nom_path1 nom_path2/*.js nom_path3</strong
+                ></small
+              >
+              <br />$
+              <small
+                ><strong>
+                  git add nom_path1 nom_path2/*.js nom_path3</strong
+                ></small
+              >
+              <br />Descartar cambios en working directory antes de pasar al
+              Staging <br />$ <strong>git restore &lt;file&gt;</strong><br />
+              Eliminando archivos <br />$ <strong>git rm &lt;file&gt;</strong> #
+              Elimina archivos rastreados del staging y del working directory
+              <br />$ <strong>rm &lt;file&gt;</strong> # Elimina archivos pero
+              no del staging luego ejecutar git add . <br />
+              $ <strong>git rm --cached &lt;file&gt;</strong> # Elimina archivos
+              del staging pero mantiene en working directory <br />
+              Renombrar archivos <br />
+              $ <strong>git mv &lt;file_from&gt; &lt;file_to&gt;</strong> #
+              Renombrar archivos
+            </p>
 
-          <p>
-            Formas de ejecutar commit <br />$
-            <small
-              ><strong
-                >git commit -m "Referencia de las modificaciones
-                contenidas</strong
-              ></small
-            >
-            <br />$
-            <small
-              ><strong
-                >git commit -am "Referencia de las modificaciones contenidas con
-                add . incluido"</strong
-              ></small
-            ><br />
-            # no ejecutar posterior a una Fusión mediante Manual Merge por
-            sobreescritura de commit --amend<br />$
-            <small
-              ><strong
-                >git commit -a --amend -m "Referencia de las modificaciones
-                contenidas con add . incluido"</strong
-              ></small
-            ><br />$ <small><strong>git commit --amend --no-edit</strong></small
-            ><br />$
-            <small><strong>git commit -a --amend --no-edit</strong></small>
-            <br />$
-            <small
-              ><strong
-                >git commit -a --amend -m "Cambiando mensaje de última
-                confirmación"</strong
-              ></small
-            ><br />
-            # Descartar cambios para unstage y regresarlo al Working directory
-            <br />$
-            <small><strong>git restore --staged &lt;file&gt;</strong></small>
-          </p>
-          <p>
-            Crear la rama o cambiar de rama a la main<br />$
-            <small><strong>git branch -M main</strong></small>
-          </p>
-          <p>
-            Ejecución de push para subir o empujar los cambios hacia la branch
-            (rama) del repositorio remoto, previamente se debe haber agregado el
-            origen remoto del repositorio de GitHub en caso contrario agregar
-            mediante <br />$
-            <small
-              ><strong
-                >git remote add origin
-                https://github.com/nom_usuario/nom_repositorio.git</strong
-              ></small
-            ><br />La url se la obtiene de la cuenta github para el usuario y la
-            url amigable letras, numeros y guión medio unicamente.<br />$
-            <small
-              ><strong
-                >git remote add origin
-                https://github.com/ing-l2v2/resumir_git.git</strong
-              ></small
-            >
-            <i> Particularizado</i><br /><br />$
-            <small><strong>git push -u origin main</strong></small
-            ><br />$ <small><strong>git push </strong></small> para subsecuentes
-            actualizaciones sino hay cambio de rema.
-          </p>
-          <p>
-            Para obtener, jalar o bajar los cambios desde el remoto hacia el
-            local <br />$ <small><strong>git pull</strong></small>
-          </p>
-          <p>
-            Para realizar cualquier cambio en el codigo de desarrollo
-            previamente se debe ejecutar un
-            <small><strong>$ git pull</strong></small> para obtener todas las
-            modificaciones antes de modificar código.
-          </p>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-04">
-      <section class="git-seccion">
-        <h2>Master a Main</h2>
-        <h3>Repositorios nuevos</h3>
-        <div>
-          <pre class="git-pre-wrap"><code>
+            <p>
+              Formas de ejecutar commit <br />$
+              <small
+                ><strong
+                  >git commit -m "Referencia de las modificaciones
+                  contenidas</strong
+                ></small
+              >
+              <br />$
+              <small
+                ><strong
+                  >git commit -am "Referencia de las modificaciones contenidas
+                  con add . incluido"</strong
+                ></small
+              ><br />
+              # no ejecutar posterior a una Fusión mediante Manual Merge por
+              sobreescritura de commit --amend<br />$
+              <small
+                ><strong
+                  >git commit -a --amend -m "Referencia de las modificaciones
+                  contenidas con add . incluido"</strong
+                ></small
+              ><br />$
+              <small><strong>git commit --amend --no-edit</strong></small
+              ><br />$
+              <small><strong>git commit -a --amend --no-edit</strong></small>
+              <br />$
+              <small
+                ><strong
+                  >git commit -a --amend -m "Cambiando mensaje de última
+                  confirmación"</strong
+                ></small
+              ><br />
+              # Descartar cambios para unstage y regresarlo al Working directory
+              <br />$
+              <small><strong>git restore --staged &lt;file&gt;</strong></small>
+            </p>
+            <p>
+              Crear la rama o cambiar de rama a la main<br />$
+              <small><strong>git branch -M main</strong></small>
+            </p>
+            <p>
+              Ejecución de push para subir o empujar los cambios hacia la branch
+              (rama) del repositorio remoto, previamente se debe haber agregado
+              el origen remoto del repositorio de GitHub en caso contrario
+              agregar mediante <br />$
+              <small
+                ><strong
+                  >git remote add origin
+                  https://github.com/nom_usuario/nom_repositorio.git</strong
+                ></small
+              ><br />La url se la obtiene de la cuenta github para el usuario y
+              la url amigable letras, numeros y guión medio unicamente.<br />$
+              <small
+                ><strong
+                  >git remote add origin
+                  https://github.com/ing-l2v2/resumir_git.git</strong
+                ></small
+              >
+              <i> Particularizado</i><br /><br />$
+              <small><strong>git push -u origin main</strong></small
+              ><br />$ <small><strong>git push </strong></small> para
+              subsecuentes actualizaciones sino hay cambio de rema.
+            </p>
+            <p>
+              Para obtener, jalar o bajar los cambios desde el remoto hacia el
+              local <br />$ <small><strong>git pull</strong></small>
+            </p>
+            <p>
+              Para realizar cualquier cambio en el codigo de desarrollo
+              previamente se debe ejecutar un
+              <small><strong>$ git pull</strong></small> para obtener todas las
+              modificaciones antes de modificar código.
+            </p>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-04">
+        <section class="git-seccion">
+          <h2>Master a Main</h2>
+          <h3>Repositorios nuevos</h3>
+          <div>
+            <pre class="git-pre-wrap"><code>
       git init
       git add .   <strong>Del working directory hacia el Staging (estado escenificado)</strong> aplicará rastreo (tracked) inicialmente archivos se encuentra untracked (no rastreados)
       <strong># Seleccionar los archivos a mover hacia Index | Staging. No pasan todos solo los cambios que seleccionemos</strong>
@@ -376,20 +386,20 @@
       git remote add origin https://github.com/usuario/repositorio.git
       git push -u origin main
           </code></pre>
-          <p></p>
-        </div>
-        <h3>Repositorios existentes</h3>
-        <div>
-          <pre class="git-pre-wrap"><code>
+            <p></p>
+          </div>
+          <h3>Repositorios existentes</h3>
+          <div>
+            <pre class="git-pre-wrap"><code>
       <strong>/* Crear la rama main y convertirla en principal en lugar de la master */</strong>
       <strong>git branch -M main</strong>
       git remote add origin https://github.com/usuario/repositorio.git
       git push -u origin main
         </code></pre>
-        </div>
-        <h3>Reemplazar la rama master por main en GitHub</h3>
-        <div>
-          <pre class="git-pre-wrap"><code>
+          </div>
+          <h3>Reemplazar la rama master por main en GitHub</h3>
+          <div>
+            <pre class="git-pre-wrap"><code>
     # Paso 1 :: Crear rama local main y pásar historial de rama master con el comando, el cual crea la rama main y con -m pasa el contenido de master a main.
     <strong>git branch -m master main</strong>
     
@@ -407,35 +417,35 @@
     # Paso 5 ::  Elimina la rama master del repositorio remoto
     <strong>git push origin --delete master</strong>
           </code></pre>
-        </div>
-        <h3>Para reemplazar la rama master por main en Git</h3>
-        <div>
-          <p>
-            Se observa en la séptima linea de codigo del tema
-            <a href="#git-01"> Configurando Git por Primera vez </a> como se
-            establece el --global para que el init.defaultBranch sea el main.
-          </p>
-          <pre class="git-pre-wrap"><code>
+          </div>
+          <h3>Para reemplazar la rama master por main en Git</h3>
+          <div>
+            <p>
+              Se observa en la séptima linea de codigo del tema
+              <a href="#git-01"> Configurando Git por Primera vez </a> como se
+              establece el --global para que el init.defaultBranch sea el main.
+            </p>
+            <pre class="git-pre-wrap"><code>
             <strong>git config --global init.defaultBranch main</strong>
           </code></pre>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-05">
-      <section class="git-seccion">
-        <h2>Ignorar archivos</h2>
-        <div>
-          <p>
-            En el archivo .gitignore se debe incluir todo lo que NO se quiera
-            incluir en el repositorio. Se lo puede crear manualmente o con
-            <a
-              href="https://www.toptal.com/developers/gitignore"
-              target="_blank"
-              >gitignore.io</a
-            >.
-          </p>
-          <pre class="git-pre-wrap"><code>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-05">
+        <section class="git-seccion">
+          <h2>Ignorar archivos</h2>
+          <div>
+            <p>
+              En el archivo .gitignore se debe incluir todo lo que NO se quiera
+              incluir en el repositorio. Se lo puede crear manualmente o con
+              <a
+                href="https://www.toptal.com/developers/gitignore"
+                target="_blank"
+                >gitignore.io</a
+              >.
+            </p>
+            <pre class="git-pre-wrap"><code>
     # esto es un comentario
     archivo.ext
     carpeta
@@ -453,43 +463,43 @@
     # y también en sus subcarpetas
     doc/**/*.txt
           </code></pre>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-06">
-      <section class="git-seccion">
-        <h2>Clonar repositorios</h2>
-        <div>
-          <p>
-            Primero se debe ubicar en el directorio donde se depositará el
-            repositorio a clonar y luego ejecutar la instruccion específica
-          </p>
-          <pre class="git-pre-wrap"><code><strong>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-06">
+        <section class="git-seccion">
+          <h2>Clonar repositorios</h2>
+          <div>
+            <p>
+              Primero se debe ubicar en el directorio donde se depositará el
+              repositorio a clonar y luego ejecutar la instruccion específica
+            </p>
+            <pre class="git-pre-wrap"><code><strong>
     $ git clone https://github.com/nom_usuario/nom_repositorio.git
     # Hace lo mismo pero directorio destino se llamará mylibgit
     $ git clone https://github.com/libgit2/libgit2 mylibgit
           </strong></code></pre>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-07">
-      <section class="git-seccion">
-        <h2>Ramas</h2>
-        <div>
-          <p>
-            Una rama permitirá aislar una nueva funcionalidad en el código que
-            después se podrá añadir a la versión principal.
-          </p>
-          <p>
-            Los cambios rastreados (tracked) en una rama, confirmados (commit) y
-            luego al realizar un git push se debe ejecutar como
-            <code><strong>git push -u origin nombre-de-la-rama</strong></code
-            >, caso contrario genera error, donde --set-upstream se equivale a
-            -u
-          </p>
-          <pre class="git-pre-wrap"><code>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-07">
+        <section class="git-seccion">
+          <h2>Ramas</h2>
+          <div>
+            <p>
+              Una rama permitirá aislar una nueva funcionalidad en el código que
+              después se podrá añadir a la versión principal.
+            </p>
+            <p>
+              Los cambios rastreados (tracked) en una rama, confirmados (commit)
+              y luego al realizar un git push se debe ejecutar como
+              <code><strong>git push -u origin nombre-de-la-rama</strong></code
+              >, caso contrario genera error, donde --set-upstream se equivale a
+              -u
+            </p>
+            <pre class="git-pre-wrap"><code>
           fatal: The current branch html has no upstream branch.
           To push the current branch and set the remote as upstream, use
 
@@ -498,68 +508,70 @@
           To have this happen automatically for branches without a tracking
           upstream, see 'push.autoSetupRemote' in 'git help config'.            
           </code></pre>
-          <h3>Crear rama</h3>
-          <p>git branch nombre-rama</p>
-          <h3>Cambiar de rama</h3>
-          <p>git checkout nombre-rama</p>
-          <h3>Crear una rama y cambiarse a ella</h3>
-          <p>git checkout -b nombre-rama</p>
-          <h3>Eliminar rama</h3>
-          <p>git branch -d nombre-rama</p>
-          <h3>Eliminar rama método forzado</h3>
-          <p>git branch -D nombre-rama</p>
-          <h3>Eliminar ramas remotas</h3>
-          <p>git push origin --delete nombre-rama</p>
-          <h3>Listar todas las ramas del repositorio</h3>
-          <p>git branch</p>
-          <h3>lista ramas no fusionadas a la rama actual</h3>
-          <p>git branch --no-merged</p>
-          <h3>lista ramas fusionadas a la rama actual</h3>
-          <p>git branch --merged</p>
-          <h3>rebasar ramas</h3>
-          <p>
-            git checkout rama-secundaria <br />
-            git rebase rama-principal
-          </p>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-08">
-      <section class="git-seccion">
-        <h2>Fusiones</h2>
-        <div>
-          <p>Une dos ramas. Para hacer una fusión se necesita:</p>
-          <ol>
-            <li>
-              Situarse en la rama que se quedará con el contenido fusionado.
-            </li>
-            <li>Fusionar.</li>
-          </ol>
-          <p>Cuando se fusionan ramas se pueden dar 2 resultados diferentes:</p>
-          <ul>
-            <li>
-              <strong><i>Fast-Forward</i></strong
-              >: Fusión se hace automática, no hay conflictos por resolver.
-              Ramas trabajan en archivos diferentes.
-            </li>
-            <li>
-              <strong><i>Manual Merge</i></strong
-              >: La fusión hay que hacerla manual, para resolver conflictos de
-              duplicación de contenido. En cada rama afectan a un mismo archivo,
-              se debe editar el archivo resultante del espacio Ej. main/merged y
-              luego realizar un git add y un nuevo git commit para luego
-              realizar un git push
-            </li>
-          </ul>
-          <p>
-            Posterior a la fusión merge se requiere realizar un
-            <code>
-              <strong>git push -u origin main </strong>
-            </code>
-            o a la rama resultante de la fusion
-          </p>
-          <pre class="git-pre-wrap"><code>
+            <h3>Crear rama</h3>
+            <p>git branch nombre-rama</p>
+            <h3>Cambiar de rama</h3>
+            <p>git checkout nombre-rama</p>
+            <h3>Crear una rama y cambiarse a ella</h3>
+            <p>git checkout -b nombre-rama</p>
+            <h3>Eliminar rama</h3>
+            <p>git branch -d nombre-rama</p>
+            <h3>Eliminar rama método forzado</h3>
+            <p>git branch -D nombre-rama</p>
+            <h3>Eliminar ramas remotas</h3>
+            <p>git push origin --delete nombre-rama</p>
+            <h3>Listar todas las ramas del repositorio</h3>
+            <p>git branch</p>
+            <h3>lista ramas no fusionadas a la rama actual</h3>
+            <p>git branch --no-merged</p>
+            <h3>lista ramas fusionadas a la rama actual</h3>
+            <p>git branch --merged</p>
+            <h3>rebasar ramas</h3>
+            <p>
+              git checkout rama-secundaria <br />
+              git rebase rama-principal
+            </p>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-08">
+        <section class="git-seccion">
+          <h2>Fusiones</h2>
+          <div>
+            <p>Une dos ramas. Para hacer una fusión se necesita:</p>
+            <ol>
+              <li>
+                Situarse en la rama que se quedará con el contenido fusionado.
+              </li>
+              <li>Fusionar.</li>
+            </ol>
+            <p>
+              Cuando se fusionan ramas se pueden dar 2 resultados diferentes:
+            </p>
+            <ul>
+              <li>
+                <strong><i>Fast-Forward</i></strong
+                >: Fusión se hace automática, no hay conflictos por resolver.
+                Ramas trabajan en archivos diferentes.
+              </li>
+              <li>
+                <strong><i>Manual Merge</i></strong
+                >: La fusión hay que hacerla manual, para resolver conflictos de
+                duplicación de contenido. En cada rama afectan a un mismo
+                archivo, se debe editar el archivo resultante del espacio Ej.
+                main/merged y luego realizar un git add y un nuevo git commit
+                para luego realizar un git push
+              </li>
+            </ul>
+            <p>
+              Posterior a la fusión merge se requiere realizar un
+              <code>
+                <strong>git push -u origin main </strong>
+              </code>
+              o a la rama resultante de la fusion
+            </p>
+            <pre class="git-pre-wrap"><code>
     # Cambiar a la rama principal resultante que quedará de la fusión
     git checkout rama-principal
     Ej.: git checkout main
@@ -573,19 +585,19 @@
     # Si se requiere eliminar la rama-secundaria posterior al merge o fusión
     git push -u origin --delete rama-secundaria
           </code></pre>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-09">
-      <section class="git-seccion">
-        <h2>Cambios</h2>
-        <div>
-          <p>
-            Se Puede agregar modificaciones al último cambio (confirmación o
-            commit)
-          </p>
-          <pre class="git-pre-wrap"><code>            
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-09">
+        <section class="git-seccion">
+          <h2>Cambios</h2>
+          <div>
+            <p>
+              Se Puede agregar modificaciones al último cambio (confirmación o
+              commit)
+            </p>
+            <pre class="git-pre-wrap"><code>            
     # sin editar el mensaje de la última confirmación ( commit ) no ejecutar posterior a una Fusión mediante Manual Merge por existir un --amend, si existiera el commit en el push entonces se debe realizar pull y modificar manualmente similar a Fusion Manual Merge. Es recomendable usar --amend mientras no se haya ejecutado un push. Ni usarlo en la resolución de conflicto main/merged
     git commit --amend --no-edit
 
@@ -595,11 +607,11 @@
     # eliminar el último commit
     git reset --hard HEAD~1
           </code></pre>
-          <p>
-            Podemos desplazarnos en el historial del repositorio hacia atrás o
-            adelante en cambios o ramas, sin afectar el repositorio como tal.
-          </p>
-          <pre class="git-pre-wrap"><code>            
+            <p>
+              Podemos desplazarnos en el historial del repositorio hacia atrás o
+              adelante en cambios o ramas, sin afectar el repositorio como tal.
+            </p>
+            <pre class="git-pre-wrap"><code>            
     # cambiar a una rama 
     git checkout nombre-rama 
     
@@ -615,20 +627,20 @@
     # O para guardar el commit con un nombre distinto 
     git switch -c ramaPrevia
           </code></pre>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-10">
-      <section class="git-seccion">
-        <h2>Registro del Historial</h2>
-        <div>
-          <p>
-            <strong>git log</strong> nos permite conocer todo el historial de un
-            proyecto, con la información de la fecha, el autor y id de cada
-            cambio.
-          </p>
-          <pre class="git-pre-wrap"><code>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-10">
+        <section class="git-seccion">
+          <h2>Registro del Historial</h2>
+          <div>
+            <p>
+              <strong>git log</strong> nos permite conocer todo el historial de
+              un proyecto, con la información de la fecha, el autor y id de cada
+              cambio.
+            </p>
+            <pre class="git-pre-wrap"><code>
     git log
 
     # muestra en una sola línea por cambio
@@ -663,50 +675,54 @@
     # muestra historial con el formato indicado
     git log --pretty=format:"%h - %an, %ar : %s"
           </code></pre>
-          <h4>Opciones utiles de --pretty=format</h4>
-          <div class="abbr-for-pretty-format">
-            <div><abbr data-title="Hash de la confirmación">%H</abbr></div>
-            <div>
-              <abbr data-title="Hash de la confirmación abreviado">%h</abbr>
+            <h4>Opciones utiles de --pretty=format</h4>
+            <div class="abbr-for-pretty-format">
+              <div><abbr data-title="Hash de la confirmación">%H</abbr></div>
+              <div>
+                <abbr data-title="Hash de la confirmación abreviado">%h</abbr>
+              </div>
+              <div><abbr data-title="Hash del árbol">%T</abbr></div>
+              <div><abbr data-title="Hash del árbol abreviado">%t</abbr></div>
+              <div>
+                <abbr data-title="Hashes de las confirmaciones padre">%P</abbr>
+              </div>
+              <div>
+                <abbr data-title="Hashes de las confirmaciones padre abreviados"
+                  >%p</abbr
+                >
+              </div>
+              <div><abbr data-title="Author name">%an</abbr></div>
+              <div><abbr data-title="Author email">%ae</abbr></div>
+              <div><abbr data-title="Fecha de autoría">%ad</abbr></div>
+              <div><abbr data-title="Fecha de autoría relativa">%ar</abbr></div>
+              <div><abbr data-title="Nombre del confirmador">%cn</abbr></div>
+              <div>
+                <abbr data-title="Dirección de correo del confirmador"
+                  >%ce</abbr
+                >
+              </div>
+              <div><abbr data-title="Fecha de confirmación">%cd</abbr></div>
+              <div>
+                <abbr data-title="Fecha de confirmación, relativa">%cr</abbr>
+              </div>
+              <div><abbr data-title="Asunto">%s</abbr></div>
+              <div>
+                <abbr data-title="Cualquier firma encontrada">%G?</abbr>
+              </div>
             </div>
-            <div><abbr data-title="Hash del árbol">%T</abbr></div>
-            <div><abbr data-title="Hash del árbol abreviado">%t</abbr></div>
-            <div>
-              <abbr data-title="Hashes de las confirmaciones padre">%P</abbr>
-            </div>
-            <div>
-              <abbr data-title="Hashes de las confirmaciones padre abreviados"
-                >%p</abbr
-              >
-            </div>
-            <div><abbr data-title="Author name">%an</abbr></div>
-            <div><abbr data-title="Author email">%ae</abbr></div>
-            <div><abbr data-title="Fecha de autoría">%ad</abbr></div>
-            <div><abbr data-title="Fecha de autoría relativa">%ar</abbr></div>
-            <div><abbr data-title="Nombre del confirmador">%cn</abbr></div>
-            <div>
-              <abbr data-title="Dirección de correo del confirmador">%ce</abbr>
-            </div>
-            <div><abbr data-title="Fecha de confirmación">%cd</abbr></div>
-            <div>
-              <abbr data-title="Fecha de confirmación, relativa">%cr</abbr>
-            </div>
-            <div><abbr data-title="Asunto">%s</abbr></div>
-            <div><abbr data-title="Cualquier firma encontrada">%G?</abbr></div>
           </div>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-11">
-      <section class="git-seccion">
-        <h2>Reseteo del historial</h2>
-        <div>
-          <p>
-            Podemos eliminar el historial de cambios del proyecto hacia adelante
-            con respecto de un punto de referencia.
-          </p>
-          <pre class="git-pre-wrap"><code>
+        </section>
+      </article>
+      <hr />
+      <article id="git-11">
+        <section class="git-seccion">
+          <h2>Reseteo del historial</h2>
+          <div>
+            <p>
+              Podemos eliminar el historial de cambios del proyecto hacia
+              adelante con respecto de un punto de referencia.
+            </p>
+            <pre class="git-pre-wrap"><code>
     # nos muestra el listado de archivos nuevos (untracked), borrados o editados
     git status
 
@@ -725,20 +741,20 @@
     # desecha todo el historial y regresa al commit especificado si poder recuperar lo que esta en el futuro
     git reset --hard id-commit
           </code></pre>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-12">
-      <section class="git-seccion">
-        <h2>Resetear un repositorio</h2>
-        <div>
-          <p>
-            Si en algún momento tienes la necesidad de resetear el historial de
-            cambios de un repositorio para que quede como si lo acabarás de
-            crear ejecuta esta serie de comandos:
-          </p>
-          <pre class="git-pre-wrap"><code>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-12">
+        <section class="git-seccion">
+          <h2>Resetear un repositorio</h2>
+          <div>
+            <p>
+              Si en algún momento tienes la necesidad de resetear el historial
+              de cambios de un repositorio para que quede como si lo acabarás de
+              crear ejecuta esta serie de comandos:
+            </p>
+            <pre class="git-pre-wrap"><code>
     cd carpeta-repositorio
     # La ~ es equivalente %USERPROFILE%, mover .git/config hacia el ~
     <strong>mv .git/config ~/guardado_git_config</strong>
@@ -752,16 +768,16 @@
     <strong>mv ~/guardado_git_config .git/config</strong>
     <strong>git push --force origin main</strong>
           </code></pre>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-13">
-      <section class="git-seccion">
-        <h2>Remotos</h2>
-        <div>
-          <p></p>
-          <pre class="git-pre-wrap"><code>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-13">
+        <section class="git-seccion">
+          <h2>Remotos</h2>
+          <div>
+            <p></p>
+            <pre class="git-pre-wrap"><code>
     # muestra los orígenes remotos del repositorio
     git remote
 
@@ -780,25 +796,25 @@
     # descargar una rama remota a local diferente a la principal
     git checkout --track -b rama-remota origin/rama-remota            
           </code></pre>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-14">
-      <section class="git-seccion">
-        <h2>Etiquetas</h2>
-        <div>
-          <p>
-            Con esta opción git nos permite versionar código, librería o
-            proyecto. Para información sobre versionar, puede visitar
-            <a
-              href="https://www.semver.org/lang/es/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Versionado semántico 2.0.0</a
-            >
-          </p>
-          <pre class="git-pre-wrap"><code>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-14">
+        <section class="git-seccion">
+          <h2>Etiquetas</h2>
+          <div>
+            <p>
+              Con esta opción git nos permite versionar código, librería o
+              proyecto. Para información sobre versionar, puede visitar
+              <a
+                href="https://www.semver.org/lang/es/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Versionado semántico 2.0.0</a
+              >
+            </p>
+            <pre class="git-pre-wrap"><code>
     # listar etiquetas
     git tag
 
@@ -825,19 +841,19 @@
     git tag -a "v1.0.0" -m "Mensaje de la etiqueta"
     git push origin --tags   # Envia todas las etiquetas al remoto que aun no existen en el
           </code></pre>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-14-1">
-      <section class="git-seccion">
-        <h2>Alias de Git</h2>
-        <div>
-          <p>
-            Si no quiere teclear nombre completo de comando git, puede
-            definirlos en el config, algunos ej. de como proceder.
-          </p>
-          <pre class="git-pre-wrap"><code>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-14-1">
+        <section class="git-seccion">
+          <h2>Alias de Git</h2>
+          <div>
+            <p>
+              Si no quiere teclear nombre completo de comando git, puede
+              definirlos en el config, algunos ej. de como proceder.
+            </p>
+            <pre class="git-pre-wrap"><code>
     $ git config --global alias.ck checkout # usaria $ git ck
     $ git config --global alias.br branch   # usaria $ git br
     $ git config --global alias.cm commit   # usaria $ git cm
@@ -847,110 +863,116 @@
         $ git reset HEAD fileA
     $ git config --global alias.last 'log -1 HEAD'  # ver cuál fue la última confirmación con git last
           </code></pre>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-14-2">
-      <section class="git-seccion">
-        <h2>Firmando su trabajo</h2>
-        <div>
-          <p>
-            $ <strong>gpg --list-keys</strong> # listar las llaves personales
-            instaladas<br />
-            $ <strong>gpg --gen-key</strong> # generar una nueva llave privada
-            <br />
-            $
-            <strong>
-              git config --global user.signingkey
-              D7F60C5ED2ADA3C288E2BC806F196175773176B1
-            </strong>
-          </p>
-          <h3>Firmando tags</h3>
-          <p>
-            Una vez configurada una llave privada, puede usarse para firmar
-            tags, usando -s en lugar de -a <br />
-            $ <strong>$ git tag -s v1.5.0 -m 'mi firma 1.5 tag'</strong> <br />
-            Si ejecutas git show en ese tag puedes ver tu firma gpg adjunta a el
-            <br />
-            $ <strong>git show v1.5.0</strong>
-          </p>
-          <h3>Verificando Tags</h3>
-          <p>
-            Para verificar un tag firmado, se necesita la clave pública guardada
-            del usuario para que funcione de forma apropiada, sino se obtiene un
-            error. <br />
-            $ <strong>git tag -v v1.4.2.1</strong>
-          </p>
-          <h3>Firmando commits</h3>
-          <p>
-            Para ello se agrega un -S a la ejecución del commit <br />
-            $ <strong>git commit -a -S -m 'signed commit'</strong> <br />
-            Para ver y verificar firmas con la opcion de git log, donde se
-            detallara la gpg de existir <br />
-            $ <strong>git log --show-signature -1</strong> <br />
-            Adicionalmente, puedes configurar git log para verificar cualquier
-            firma que encuentre y listarlas en su salida con el formato %G?.
-            <br />
-            $ <strong>git log --pretty="format:%h %G? %aN %s"</strong> <br />
-            En Git 1.8.3 y posteriores, "git merge" y "git pull" pueden ser
-            configurados para inspeccionar y rechazar cualquier commit que no
-            adjunte una firma GPG de confianza con el comando
-            <small><strong>--verify-signatures</strong></small
-            >. <br />
-            Pero cuando se fusiona una rama y esta contiene commits que no están
-            firmados, aunque sean válidos, la fusión no funcionará <br />
-            $
-            <strong>
-              git merge --verify-signatures non-verify <br />
-              fatal: Commit ab06180 does not have a GPG signature.
-            </strong>
-            <br />
-            Si una fusión contiene solo commits válidos y firmados, el comando
-            merge mostrará todas las firmas que ha revisado y después procederá
-            con la fusión. <br />$
-            <strong>git merge --verify-signatures signed-branch</strong> <br />
-            También se puede utilizar la opción -S junto con el mismo comando
-            git merge para firmar el commit resultante. El siguiente ejemplo
-            verifica que cada commit en la rama por ser fusionada esté firmado y
-            también firma el commit resultado de la fusión.
-            <br />
-            $ <strong>git merge --verify-signatures -S signed-branch</strong>
-          </p>
-          <h3>Todos deben firmar</h3>
-          <p>
-            Firmar tags y commits es grandioso, pero si decides usar esto en tu
-            flujo de trabajo normal, tendrás que asegurarte que todos en el
-            equipo entiendan cómo hacerlo. Si no, terminarás gastando mucho
-            tiempo ayudando a las personas a descubrir cómo reescribir sus
-            commits con versiones firmadas. Asegúrate de entender GPG y los
-            beneficios de firmar cosas antes de adoptarlo como parte de tu flujo
-            de trabajo normal.
-          </p>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-15">
-      <section class="git-seccion">
-        <h2>GitHub Pages</h2>
-        <div>
-          <p>
-            <a href="https://pages.github.com/" target="_blank"
-              ><strong><i>gh-pages</i></strong></a
-            >
-            Es una rama especial para crear un sitio web a tu proyecto alojado
-            directamente en tu repositorio de GitHub.
-          </p>
-          <ul>
-            <li>URL del repositorio: https://github.com/usuario/repositorio</li>
-            <li>URL del sitio: https://usuario.github.io/repositorio</li>
-          </ul>
-          <p>
-            Para crear esta rama especial en GitHub ejecutamos los siguientes
-            comandos:
-          </p>
-          <pre class="git-pre-wrap"><code>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-14-2">
+        <section class="git-seccion">
+          <h2>Firmando su trabajo</h2>
+          <div>
+            <p>
+              $ <strong>gpg --list-keys</strong> # listar las llaves personales
+              instaladas<br />
+              $ <strong>gpg --gen-key</strong> # generar una nueva llave privada
+              <br />
+              $
+              <strong>
+                git config --global user.signingkey
+                D7F60C5ED2ADA3C288E2BC806F196175773176B1
+              </strong>
+            </p>
+            <h3>Firmando tags</h3>
+            <p>
+              Una vez configurada una llave privada, puede usarse para firmar
+              tags, usando -s en lugar de -a <br />
+              $ <strong>$ git tag -s v1.5.0 -m 'mi firma 1.5 tag'</strong>
+              <br />
+              Si ejecutas git show en ese tag puedes ver tu firma gpg adjunta a
+              el
+              <br />
+              $ <strong>git show v1.5.0</strong>
+            </p>
+            <h3>Verificando Tags</h3>
+            <p>
+              Para verificar un tag firmado, se necesita la clave pública
+              guardada del usuario para que funcione de forma apropiada, sino se
+              obtiene un error. <br />
+              $ <strong>git tag -v v1.4.2.1</strong>
+            </p>
+            <h3>Firmando commits</h3>
+            <p>
+              Para ello se agrega un -S a la ejecución del commit <br />
+              $ <strong>git commit -a -S -m 'signed commit'</strong> <br />
+              Para ver y verificar firmas con la opcion de git log, donde se
+              detallara la gpg de existir <br />
+              $ <strong>git log --show-signature -1</strong> <br />
+              Adicionalmente, puedes configurar git log para verificar cualquier
+              firma que encuentre y listarlas en su salida con el formato %G?.
+              <br />
+              $ <strong>git log --pretty="format:%h %G? %aN %s"</strong> <br />
+              En Git 1.8.3 y posteriores, "git merge" y "git pull" pueden ser
+              configurados para inspeccionar y rechazar cualquier commit que no
+              adjunte una firma GPG de confianza con el comando
+              <small><strong>--verify-signatures</strong></small
+              >. <br />
+              Pero cuando se fusiona una rama y esta contiene commits que no
+              están firmados, aunque sean válidos, la fusión no funcionará
+              <br />
+              $
+              <strong>
+                git merge --verify-signatures non-verify <br />
+                fatal: Commit ab06180 does not have a GPG signature.
+              </strong>
+              <br />
+              Si una fusión contiene solo commits válidos y firmados, el comando
+              merge mostrará todas las firmas que ha revisado y después
+              procederá con la fusión. <br />$
+              <strong>git merge --verify-signatures signed-branch</strong>
+              <br />
+              También se puede utilizar la opción -S junto con el mismo comando
+              git merge para firmar el commit resultante. El siguiente ejemplo
+              verifica que cada commit en la rama por ser fusionada esté firmado
+              y también firma el commit resultado de la fusión.
+              <br />
+              $ <strong>git merge --verify-signatures -S signed-branch</strong>
+            </p>
+            <h3>Todos deben firmar</h3>
+            <p>
+              Firmar tags y commits es grandioso, pero si decides usar esto en
+              tu flujo de trabajo normal, tendrás que asegurarte que todos en el
+              equipo entiendan cómo hacerlo. Si no, terminarás gastando mucho
+              tiempo ayudando a las personas a descubrir cómo reescribir sus
+              commits con versiones firmadas. Asegúrate de entender GPG y los
+              beneficios de firmar cosas antes de adoptarlo como parte de tu
+              flujo de trabajo normal.
+            </p>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-15">
+        <section class="git-seccion">
+          <h2>GitHub Pages</h2>
+          <div>
+            <p>
+              <a href="https://pages.github.com/" target="_blank"
+                ><strong><i>gh-pages</i></strong></a
+              >
+              Es una rama especial para crear un sitio web a tu proyecto alojado
+              directamente en tu repositorio de GitHub.
+            </p>
+            <ul>
+              <li>
+                URL del repositorio: https://github.com/usuario/repositorio
+              </li>
+              <li>URL del sitio: https://usuario.github.io/repositorio</li>
+            </ul>
+            <p>
+              Para crear esta rama especial en GitHub ejecutamos los siguientes
+              comandos:
+            </p>
+            <pre class="git-pre-wrap"><code>
     git branch gh-pages
     git checkout gh-pages
 
@@ -961,47 +983,212 @@
     # para descargar los cambios del repositorio remoto al local
     git pull origin gh-pages            
           </code></pre>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-16">
-      <section class="git-seccion">
-        <h2>Colaboración en GitHub</h2>
-        <div>
-          <p>
-            Para poder colaborar en proyectos alojados en GitHub necesitamos
-            hacer uso de los forks y pull requests, herramientas que nos ofrece
-            la plataforma para dicho objetivo.
-          </p>
-          <p>A continuación describo el proceso de colaboración en GitHub.</p>
-          <ol>
-            <li>
-              Forkea el repositorio en el que quieras colaborar, el repositorio
-              debe ser público para poder forkearlo, para hacerlo, sigue las
-              instrucciones de este
-              <a
-                href="https://docs.github.com/en/get-started/quickstart/fork-a-repo"
-                target="_blank"
-              >
-                enlace </a
-              >, esto se realiza en el github del cliente que colaborará con
-              cambios apuntando hacia el repositorio del cliente origen.<br />
-              Ej. cliente l2v2 abre una ventana github con la url del cliente
-              ing-l2v2 https://github.com/ing-l2v2/resumir_git y pulsa fork,
-              pudiendo mantener el nombre del repositorio o cambiarlo. Tomar
-              solo la rama main o todas las ramas declaradas y Crear Fork.
-            </li>
-            <li>
-              Una vez forkeado el repositorio en tu cuenta de GitHub, clonarlo
-              en el equipo de cómputo local, desde la cuenta l2v2 en el caso
-              ejemplo.<br />
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-16">
+        <section class="git-seccion">
+          <h2>Colaboración en GitHub</h2>
+          <div>
+            <p>
+              Para poder colaborar en proyectos alojados en GitHub necesitamos
+              hacer uso de los forks y pull requests, herramientas que nos
+              ofrece la plataforma para dicho objetivo.
+            </p>
+            <p>A continuación describo el proceso de colaboración en GitHub.</p>
+            <ol>
+              <li>
+                Forkea el repositorio en el que quieras colaborar, el
+                repositorio debe ser público para poder forkearlo, para hacerlo,
+                sigue las instrucciones de este
+                <a
+                  href="https://docs.github.com/en/get-started/quickstart/fork-a-repo"
+                  target="_blank"
+                >
+                  enlace </a
+                >, esto se realiza en el github del cliente que colaborará con
+                cambios apuntando hacia el repositorio del cliente origen.<br />
+                Ej. cliente l2v2 abre una ventana github con la url del cliente
+                ing-l2v2 https://github.com/ing-l2v2/resumir_git y pulsa fork,
+                pudiendo mantener el nombre del repositorio o cambiarlo. Tomar
+                solo la rama main o todas las ramas declaradas y Crear Fork.
+              </li>
+              <li>
+                Una vez forkeado el repositorio en tu cuenta de GitHub, clonarlo
+                en el equipo de cómputo local, desde la cuenta l2v2 en el caso
+                ejemplo.<br />
+                $
+                <strong>
+                  git clone https://github.com/l2v2/resumir-git-l2v2.git
+                </strong>
+              </li>
+              <li>
+                En el repositorio local hay que configurar los orígenes remotos
+                de tu nueva copía para tener ambos remotos, los originales
+                (origin) y los de tu copia, para hacerlo, sigue las
+                instrucciones de este
+                <a href="#git-17">enlace</a>. <br />
+                $ <strong>git remote -v</strong> # visualiza las url de los
+                fetch y push <br />
+                $ <strong>git remote rename origin fork</strong> # Renombrar el
+                origin como fork para crear otro remoto del original
+                correspondiente al de ing-l2v2 <br />
+                $
+                <strong
+                  >git remote add origin
+                  https://github.com/ing-l2v2/resumir_git.git</strong
+                >
+                # luego se tendrá dos origenes el fork y el origin <br />
+                $ <strong>git remote -v </strong> # genera como resultado <br />
+                <pre><code>
+                fork    https://github.com/l2v2/resumir-git-l2v2.git  (fetch)
+                fork    https://github.com/l2v2/resumir-git-l2v2.git  (push)
+                origin  https://github.com/ing-l2v2/resumir_git.git  (fetch)
+                origin  https://github.com/ing-l2v2/resumir_git.git  (push)
+              </code></pre>
+              </li>
+              <li>
+                Crea una rama nueva en tu fork local para hacer tu colaboración,
+                y sincrónizala con tu repositorio remoto, para hacerlo, sigue
+                las instrucciones de este
+                <a
+                  href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork"
+                  target="_blank"
+                  >enlace</a
+                >. <br />
+                $ <strong>git checkout -b rama-modificaciones-local</strong> #
+                Luego realizar las modificaciones en el codigo y guardar en la
+                rama. <br />
+                $
+                <strong
+                  >git commit -a -m "Descripción de las modificaciones"</strong
+                ><br />
+                $ <strong>git push fork rama-modificaciones-local</strong> #
+                Genera la rama en el fork de l2v2
+              </li>
+              <li>
+                Configurar repositorio para que acepté cambios (pull requests),
+                para hacerlo, sigue las instrucciones de este
+                <a
+                  href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  enlace </a
+                >.
+              </li>
+              <li>
+                Crea una pull request, para hacerlo, sigue las instrucciones de
+                este
+                <a
+                  href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request"
+                  target="_blank"
+                  >enlace</a
+                >.<br />
+                Haciendo la petición del pull-requests desde la cuenta de l2v2,
+                para que la cuenta propietario ing-l2v2 acepte el pull-requests.
+                <br />
+                Para esto con l2v2 (cuenta solicitante) dirigirse a menu
+                pull-requests/new pull-requests y detecta los cambios presentes
+                en la rama
+                <small><strong>rama-modificaciones-local</strong></small
+                >. En comparando cambios indica
+                <small><strong>base repository</strong></small> se tomaria
+                ing-l2v2/resumen_git, en
+                <small><strong>base</strong></small> definimos la rama base
+                main, en <small><strong>head repository</strong></small> se
+                define el colaborador l2v2/resume-git-l2v2 y en
+                <small><strong>compare</strong></small> se establece la rama a
+                compartir rama-modificaciones-local. <br />
+                Casi para finalizar se pulsa Crear pull-requests y se llena el
+                formulario con el mensaje que recibirá la cuenta propietario y
+                presionar el botón crear pull-requests, el estado quedará en
+                OPEN.
+              </li>
+              <li>
+                Espera a que el dueño del repositorio original, acepte tus
+                cambios. <br />
+                El propietario recibirá una notificación en el icono en forma de
+                campana y al abrirlo se pueden revisar los commits recibidos y
+                revisarlos con el icono <small><strong>&lt;&gt;</strong></small
+                >. <br />
+                El files changed se visualiza lo que se agrega y se quita, al
+                asegurarse que estan correctas las correcciones se pulsa
+                <small><i>Merge pull request</i></small> y se
+                <small><i>Confirm merge</i></small> tambien se puede responder
+                al colaborador con un mensaje comentado. <br />
+                Cambiando el estado de OPEN a MERGED.
+              </li>
+              <li>
+                Una vez que acepten tu pull request, es recomendable que borres
+                la rama en la que trabajaste el cambio y actualices tu
+                repositorio forkeado, con los cambios del repositorio original.
+                <br />
+                En la cuenta propietario realizar un git pull en la rama main
+                <br />
+                $ <strong>git checkout main</strong> <br />
+                $ <strong>git pull origin main</strong> # descargar de origin a
+                main, tanto en l2v2 como en ing-l2v2 <br />
+                $ <strong>git push fork main</strong> # subir hacia fork que es
+                la copia de l2v2 <br />
+                $ <strong>git branch -d rama-modificaciones-local</strong> #
+                eliminar la rama local <br />
+                $
+                <strong>git branch --delete rama-modificaciones-local</strong> #
+                Eliminar la rama en el remote de l2v2
+              </li>
+            </ol>
+            <p>
+              Anexo un resumen de los comandos a ejecutar para colaborar en un
+              repositorio de GitHub:
+            </p>
+            <pre class="git-pre-wrap"><code>
+    # forkear repositorio
+    git clone https://github.com/usuario/repositorio.git
+    git remote -v
+    git remote rename origin fork
+    git remote add origin https://github.com/usuario/repositorio.git
+    git checkout -b rama-nueva
+    git push fork rama-nueva
+    # solicitar el pull request
+    # aceptar el pull request
+    git checkout main
+    git pull origin main
+    git push fork main
+    git branch -d rama-nueva
+    git push fork --delete rama-nueva            
+          </code></pre>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-17">
+        <section class="git-seccion">
+          <h2>Configurando una segunda cuenta local de Git</h2>
+          <div>
+            <p>
+              $ <strong>git --local user.name "Leonel Villa (Fidenslat)"</strong
+              ><br />
+              $ <strong>git --local user.email lvilla@fidenslat.com</strong>
+              <br />
+              $ <strong>git --local -e</strong><br />
+              $ <strong>git --local user.username "l2v2"</strong><br />
               $
-              <strong>
-                git clone https://github.com/l2v2/resumir-git-l2v2.git
-              </strong>
-            </li>
-            <li>
+              <strong
+                >git --local user.password "registrarLaClaveOpcional"</strong
+              ><br />
+              $ <strong>git --local -e</strong>
+            </p>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-18">
+        <section class="git-seccion">
+          <h2>Agregando Remotes para colaborar</h2>
+          <div>
+            <p>
               En el repositorio local hay que configurar los orígenes remotos de
               tu nueva copía para tener ambos remotos, los originales (origin) y
               los de tu copia, para hacerlo, sigue las instrucciones de este
@@ -1018,14 +1205,22 @@
               >
               # luego se tendrá dos origenes el fork y el origin <br />
               $ <strong>git remote -v </strong> # genera como resultado <br />
-              <pre><code>
-                fork    https://github.com/l2v2/resumir-git-l2v2.git  (fetch)
-                fork    https://github.com/l2v2/resumir-git-l2v2.git  (push)
-                origin  https://github.com/ing-l2v2/resumir_git.git  (fetch)
-                origin  https://github.com/ing-l2v2/resumir_git.git  (push)
-              </code></pre>
-            </li>
-            <li>
+            </p>
+            <pre><code>
+            fork    https://github.com/l2v2/resumir-git-l2v2.git  (fetch)
+            fork    https://github.com/l2v2/resumir-git-l2v2.git  (push)
+            origin  https://github.com/ing-l2v2/resumir_git.git  (fetch)
+            origin  https://github.com/ing-l2v2/resumir_git.git  (push)
+          </code></pre>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-19">
+        <section class="git-seccion">
+          <h2>Haciendo cambios y creando una rama para colaborar</h2>
+          <div>
+            <p>
               Crea una rama nueva en tu fork local para hacer tu colaboración, y
               sincrónizala con tu repositorio remoto, para hacerlo, sigue las
               instrucciones de este
@@ -1036,35 +1231,27 @@
               >. <br />
               $ <strong>git checkout -b rama-modificaciones-local</strong> #
               Luego realizar las modificaciones en el codigo y guardar en la
-              rama. <br />
+              rama.
+              <br />
               $
               <strong
                 >git commit -a -m "Descripción de las modificaciones"</strong
               ><br />
               $ <strong>git push fork rama-modificaciones-local</strong> #
-              Genera la rama en el fork de l2v2
-            </li>
-            <li>
-              Configurar repositorio para que acepté cambios (pull requests),
-              para hacerlo, sigue las instrucciones de este
-              <a
-                href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                enlace </a
-              >.
-            </li>
-            <li>
-              Crea una pull request, para hacerlo, sigue las instrucciones de
-              este
-              <a
-                href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request"
-                target="_blank"
-                >enlace</a
-              >.<br />
+              Genera la rama en el remote fork de l2v2
+            </p>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-20">
+        <section class="git-seccion">
+          <h2>Solicitando un Pull Request</h2>
+          <div>
+            <p>
               Haciendo la petición del pull-requests desde la cuenta de l2v2,
               para que la cuenta propietario ing-l2v2 acepte el pull-requests.
+              Esto se realiza en GitHub.
               <br />
               Para esto con l2v2 (cuenta solicitante) dirigirse a menu
               pull-requests/new pull-requests y detecta los cambios presentes en
@@ -1080,10 +1267,19 @@
               Casi para finalizar se pulsa Crear pull-requests y se llena el
               formulario con el mensaje que recibirá la cuenta propietario y
               presionar el botón crear pull-requests, el estado quedará en OPEN.
-            </li>
-            <li>
+            </p>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-21">
+        <section class="git-seccion">
+          <h2>Aceptando un Pull Request</h2>
+          <div>
+            <p>
               Espera a que el dueño del repositorio original, acepte tus
-              cambios. <br />
+              cambios.
+              <br />
               El propietario recibirá una notificación en el icono en forma de
               campana y al abrirlo se pueden revisar los commits recibidos y
               revisarlos con el icono <small><strong>&lt;&gt;</strong></small
@@ -1094,12 +1290,38 @@
               <small><i>Confirm merge</i></small> tambien se puede responder al
               colaborador con un mensaje comentado. <br />
               Cambiando el estado de OPEN a MERGED.
-            </li>
-            <li>
+            </p>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-22">
+        <section class="git-seccion">
+          <h2>Pasos finales en la cuenta que acepto el Pull Request</h2>
+          <div>
+            <p>
+              Una vez que aceptado el pull request, es recomendable que
+              actualize en su local, con los cambios del repositorio original.
+              <br />
+              En la cuenta propietario realizar un git pull en la rama main
+              <br />
+              $ git checkout main <br />
+              $ git pull origin main # descargar de origin a main, tanto en l2v2
+              como en ing-l2v2
+            </p>
+          </div>
+        </section>
+      </article>
+      <hr />
+      <article id="git-23">
+        <section class="git-seccion">
+          <h2>Pasos finales en la cuenta que hizo el Pull Request</h2>
+          <div>
+            <p>
               Una vez que acepten tu pull request, es recomendable que borres la
               rama en la que trabajaste el cambio y actualices tu repositorio
               forkeado, con los cambios del repositorio original. <br />
-              En la cuenta propietario realizar un git pull en la rama main
+              En la cuenta colaborador realizar un git pull en la rama main
               <br />
               $ <strong>git checkout main</strong> <br />
               $ <strong>git pull origin main</strong> # descargar de origin a
@@ -1110,263 +1332,74 @@
               eliminar la rama local <br />
               $ <strong>git branch --delete rama-modificaciones-local</strong> #
               Eliminar la rama en el remote de l2v2
-            </li>
-          </ol>
-          <p>
-            Anexo un resumen de los comandos a ejecutar para colaborar en un
-            repositorio de GitHub:
-          </p>
-          <pre class="git-pre-wrap"><code>
-    # forkear repositorio
-    git clone https://github.com/usuario/repositorio.git
-    git remote -v
-    git remote rename origin fork
-    git remote add origin https://github.com/usuario/repositorio.git
-    git checkout -b rama-nueva
-    git push fork rama-nueva
-    # solicitar el pull request
-    # aceptar el pull request
-    git checkout main
-    git pull origin main
-    git push fork main
-    git branch -d rama-nueva
-    git push fork --delete rama-nueva            
-          </code></pre>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-17">
-      <section class="git-seccion">
-        <h2>Configurando una segunda cuenta local de Git</h2>
-        <div>
-          <p>
-            $ <strong>git --local user.name "Leonel Villa (Fidenslat)"</strong
-            ><br />
-            $ <strong>git --local user.email lvilla@fidenslat.com</strong>
-            <br />
-            $ <strong>git --local -e</strong><br />
-            $ <strong>git --local user.username "l2v2"</strong><br />
-            $
-            <strong>git --local user.password "registrarLaClaveOpcional"</strong
-            ><br />
-            $ <strong>git --local -e</strong>
-          </p>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-18">
-      <section class="git-seccion">
-        <h2>Agregando Remotes para colaborar</h2>
-        <div>
-          <p>
-            En el repositorio local hay que configurar los orígenes remotos de
-            tu nueva copía para tener ambos remotos, los originales (origin) y
-            los de tu copia, para hacerlo, sigue las instrucciones de este
-            <a href="#git-17">enlace</a>. <br />
-            $ <strong>git remote -v</strong> # visualiza las url de los fetch y
-            push <br />
-            $ <strong>git remote rename origin fork</strong> # Renombrar el
-            origin como fork para crear otro remoto del original correspondiente
-            al de ing-l2v2 <br />
-            $
-            <strong
-              >git remote add origin
-              https://github.com/ing-l2v2/resumir_git.git</strong
-            >
-            # luego se tendrá dos origenes el fork y el origin <br />
-            $ <strong>git remote -v </strong> # genera como resultado <br />
-          </p>
-          <pre><code>
-            fork    https://github.com/l2v2/resumir-git-l2v2.git  (fetch)
-            fork    https://github.com/l2v2/resumir-git-l2v2.git  (push)
-            origin  https://github.com/ing-l2v2/resumir_git.git  (fetch)
-            origin  https://github.com/ing-l2v2/resumir_git.git  (push)
-          </code></pre>
-        </div>
-      </section>
+            </p>
+          </div>
+        </section>
+      </article>
       <hr />
-    </article>
-    <article id="git-19">
-      <section class="git-seccion">
-        <h2>Haciendo cambios y creando una rama para colaborar</h2>
-        <div>
-          <p>
-            Crea una rama nueva en tu fork local para hacer tu colaboración, y
-            sincrónizala con tu repositorio remoto, para hacerlo, sigue las
-            instrucciones de este
-            <a
-              href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork"
-              target="_blank"
-              >enlace</a
-            >. <br />
-            $ <strong>git checkout -b rama-modificaciones-local</strong> # Luego
-            realizar las modificaciones en el codigo y guardar en la rama.
-            <br />
-            $
-            <strong>git commit -a -m "Descripción de las modificaciones"</strong
-            ><br />
-            $ <strong>git push fork rama-modificaciones-local</strong> # Genera
-            la rama en el remote fork de l2v2
-          </p>
-        </div>
-      </section>
+      <article id="git-24">
+        <section class="git-seccion">
+          <h2>Aprender más</h2>
+          <div>
+            <p>
+              A continuación algunos enlaces donde se puede profundizar
+              conocimientos sobre Git y GitHub:
+            </p>
+            <ul>
+              <li>
+                <a
+                  href="http://rogerdudler.github.io/git-guide/index.es.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Git - la guía sencilla.
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://git-scm.com/book/es/v2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Libro Git Pro
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://docs.github.com/es"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Guías oficiales de GitHub.</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./assets/pdf/progit.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Libro en español local</a
+                >
+                - progit.pdf
+              </li>
+              <li>
+                <a
+                  href="https://jonmircha.com/git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Documentación de referencia
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </article>
       <hr />
-    </article>
-    <article id="git-20">
-      <section class="git-seccion">
-        <h2>Solicitando un Pull Request</h2>
-        <div>
-          <p>
-            Haciendo la petición del pull-requests desde la cuenta de l2v2, para
-            que la cuenta propietario ing-l2v2 acepte el pull-requests. Esto se
-            realiza en GitHub.
-            <br />
-            Para esto con l2v2 (cuenta solicitante) dirigirse a menu
-            pull-requests/new pull-requests y detecta los cambios presentes en
-            la rama <small><strong>rama-modificaciones-local</strong></small
-            >. En comparando cambios indica
-            <small><strong>base repository</strong></small> se tomaria
-            ing-l2v2/resumen_git, en
-            <small><strong>base</strong></small> definimos la rama base main, en
-            <small><strong>head repository</strong></small> se define el
-            colaborador l2v2/resume-git-l2v2 y en
-            <small><strong>compare</strong></small> se establece la rama a
-            compartir rama-modificaciones-local. <br />
-            Casi para finalizar se pulsa Crear pull-requests y se llena el
-            formulario con el mensaje que recibirá la cuenta propietario y
-            presionar el botón crear pull-requests, el estado quedará en OPEN.
-          </p>
-        </div>
-      </section>
-      <hr />
-    </article>
-    <article id="git-21">
-      <section class="git-seccion">
-        <h2>Aceptando un Pull Request</h2>
-        <div>
-          <p>
-            Espera a que el dueño del repositorio original, acepte tus cambios.
-            <br />
-            El propietario recibirá una notificación en el icono en forma de
-            campana y al abrirlo se pueden revisar los commits recibidos y
-            revisarlos con el icono <small><strong>&lt;&gt;</strong></small
-            >. <br />
-            El files changed se visualiza lo que se agrega y se quita, al
-            asegurarse que estan correctas las correcciones se pulsa
-            <small><i>Merge pull request</i></small> y se
-            <small><i>Confirm merge</i></small> tambien se puede responder al
-            colaborador con un mensaje comentado. <br />
-            Cambiando el estado de OPEN a MERGED.
-          </p>
-        </div>
-      </section>
-      <hr />
-    </article>
-    <article id="git-22">
-      <section class="git-seccion">
-        <h2>Pasos finales en la cuenta que acepto el Pull Request</h2>
-        <div>
-          <p>
-            Una vez que aceptado el pull request, es recomendable que actualize
-            en su local, con los cambios del repositorio original. <br />
-            En la cuenta propietario realizar un git pull en la rama main <br />
-            $ git checkout main <br />
-            $ git pull origin main # descargar de origin a main, tanto en l2v2
-            como en ing-l2v2
-          </p>
-        </div>
-      </section>
-      <hr />
-    </article>
-    <article id="git-23">
-      <section class="git-seccion">
-        <h2>Pasos finales en la cuenta que hizo el Pull Request</h2>
-        <div>
-          <p>
-            Una vez que acepten tu pull request, es recomendable que borres la
-            rama en la que trabajaste el cambio y actualices tu repositorio
-            forkeado, con los cambios del repositorio original. <br />
-            En la cuenta colaborador realizar un git pull en la rama main
-            <br />
-            $ <strong>git checkout main</strong> <br />
-            $ <strong>git pull origin main</strong> # descargar de origin a
-            main, tanto en l2v2 como en ing-l2v2 <br />
-            $ <strong>git push fork main</strong> # subir hacia fork que es la
-            copia de l2v2 <br />
-            $ <strong>git branch -d rama-modificaciones-local</strong> #
-            eliminar la rama local <br />
-            $ <strong>git branch --delete rama-modificaciones-local</strong> #
-            Eliminar la rama en el remote de l2v2
-          </p>
-        </div>
-      </section>
-      <hr />
-    </article>
-    <article id="git-24">
-      <section class="git-seccion">
-        <h2>Aprender más</h2>
-        <div>
-          <p>
-            A continuación algunos enlaces donde se puede profundizar
-            conocimientos sobre Git y GitHub:
-          </p>
-          <ul>
-            <li>
-              <a
-                href="http://rogerdudler.github.io/git-guide/index.es.html"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Git - la guía sencilla.
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://git-scm.com/book/es/v2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Libro Git Pro
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://docs.github.com/es"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Guías oficiales de GitHub.</a
-              >
-            </li>
-            <li>
-              <a
-                href="./assets/pdf/progit.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Libro en español local</a
-              >
-              - progit.pdf
-            </li>
-            <li>
-              <a
-                href="https://jonmircha.com/git"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Documentación de referencia
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </article>
-    <hr />
-    <article id="git-25">
-      <section class="git-seccion">
-        <h2>Prácticas personales</h2>
-        <div>
-          <pre class="git-pre-wrap"><code>
+      <article id="git-25">
+        <section class="git-seccion">
+          <h2>Prácticas personales</h2>
+          <div>
+            <pre class="git-pre-wrap"><code>
     $ git config --global -e
     $ git init
     $ git add .
@@ -1384,8 +1417,9 @@
     <strong>Traer cambios desde el origin hacia el main local</strong>
     $ git pull
           </code></pre>
-        </div>
-      </section>
-    </article>
+          </div>
+        </section>
+      </article>
+    </main>
   </body>
 </html>
