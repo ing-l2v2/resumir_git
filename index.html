@@ -133,7 +133,7 @@
     git config --global user.email l2v2blue@gmail.com
     <strong>/* Activar los colores en la UI de la terminal */</strong>
     git config --global user.ui true
-    git config --global init.defaultBranch main
+    git config --global init.defaultBranch main     # define la rama principal como main en lugar de master.
     <strong>/* Muestra en pantalla la configuración, salir con letra q */</strong>
     git config --list
     # asignar visual studio code como editor de configuración de git
@@ -174,7 +174,7 @@
             <h2>Flujo Básico</h2>
             <p>
               Flujo de Git, consta de tres estados locales y uno de forma remota
-              cuando accedemos al codigo centralizado:
+              cuando accedemos al c&oacute;digo centralizado:
               <span class="strong"><i>modified</i></span
               >, <span class="strong"><i>staged</i></span
               >, <span class="strong"><i>committed</i></span> y
@@ -187,7 +187,8 @@
                 correspondiente al estado
                 <span class="strong"><i>modified</i></span
                 >, es la carpeta local de PC donde se almacenan los archivos del
-                proyecto.
+                proyecto. <strong>&laquo; MODIFICADO &raquo;</strong> rastreado
+                o no rastreado.
               </li>
               <li>
                 <spam class="strong"><i>Staging Area</i></spam
@@ -196,7 +197,7 @@
                 index por que es el área donde git indexa y agrega los cambios
                 realizados en los archivos previos a comprometerlos en su
                 registro. <strong>INDEX | STAGING</strong>. Estado de indice o
-                estado de ensayo.
+                estado de ensayo. <strong>&laquo; PREPARADO &raquo;</strong>
               </li>
               <li>
                 <spam class="strong"><i>Local Repository</i></spam
@@ -206,6 +207,10 @@
                 git también se le llama
                 <spam class="strong"><i>HEAD o Local</i></spam> por que indica
                 en qué cambio se encuentra el puntero del repositorio.
+                <strong
+                  >&laquo; CONFIRMADO &raquo; o &laquo; COMPROMISO
+                  &raquo;</strong
+                >
               </li>
               <li>
                 <spam class="strong"><i>Remote Repository</i></spam
@@ -229,7 +234,8 @@
     # agregar todos los cambios de todos los archivos al staged
     <strong>git add .</strong>
     # Descartar cambios en working directory antes de pasar al Staging
-    <strong>git restore &lt;file&gt;</strong>
+    <strong>git restore &lt;file&gt;</strong>     # Elimina cambios del working directory restableciendo el archivo al estado previo.
+    <strong>git restore --staged &lt;file&gt;</strong>    # Descartar cambios para stage (preparado) y regresarlo al Working directory (modificado)
 
     # Eliminando archivos
     <strong>git rm &lt;file&gt;</strong>  # Elimina archivos rastreados del staging y del working directory
@@ -243,15 +249,16 @@
     <strong>git commit</strong>
     # es un shortcut del comando anterior escribes y confirmas el mensaje del cambio en un sólo paso
     <strong>git commit -m "mensaje descriptivo del cambio"</strong>
-    # Descartar cambios para unstage y regresarlo al Working directory
-    <strong>git restore --staged &lt;file&gt;</strong>
 
     # se agrega el origen remoto de tu repositorio de GitHub
     <strong>git remote add origin https://github.com/usuario/repositorio.git</strong>
     <strong>git remote add origin https://github.com/ing-l2v2/resumir_git.git</strong>
+    # Para ssh el genérico      <strong>git remote add origin git@host:username/nom_repositorio.git</strong>
+    <strong>git remote add origin git@git-gesmedfam:gesmedfam/sigesmed</strong>
+    <strong>git remote add origin git@git-ingl2v2:corptrip/corporacion.git</strong>
     # la primera vez que vinculamos el repositorio remoto con el local master
     <strong>git push -u origin master</strong>
-    # para las subsecuentes actualizaciones, sino cambias de rama, en caso de otra rama entonces <code><strong>git push -u origin nombre-rama-diferente</strong></code>
+    # para las subsecuentes actualizaciones, sino cambias de rama, y en caso de otra rama entonces <code><strong>git push -u origin nombre-rama-diferente</strong></code>
     <strong>git push</strong>
 
     #para descargar los cambios del repositorio remoto al local
@@ -278,17 +285,6 @@
                   git add nom_path1 nom_path2/*.js nom_path3</strong
                 ></small
               >
-              <br />Descartar cambios en working directory antes de pasar al
-              Staging <br />$ <strong>git restore &lt;file&gt;</strong><br />
-              Eliminando archivos <br />$ <strong>git rm &lt;file&gt;</strong> #
-              Elimina archivos rastreados del staging y del working directory
-              <br />$ <strong>rm &lt;file&gt;</strong> # Elimina archivos pero
-              no del staging luego ejecutar git add . <br />
-              $ <strong>git rm --cached &lt;file&gt;</strong> # Elimina archivos
-              del staging pero mantiene en working directory <br />
-              Renombrar archivos <br />
-              $ <strong>git mv &lt;file_from&gt; &lt;file_to&gt;</strong> #
-              Renombrar archivos
             </p>
 
             <p>
@@ -323,10 +319,7 @@
                   >git commit -a --amend -m "Cambiando mensaje de última
                   confirmación"</strong
                 ></small
-              ><br />
-              # Descartar cambios para unstage y regresarlo al Working directory
-              <br />$
-              <small><strong>git restore --staged &lt;file&gt;</strong></small>
+              >
             </p>
             <p>
               Crear la rama o cambiar de rama a la main<br />$
@@ -350,10 +343,31 @@
                   https://github.com/ing-l2v2/resumir_git.git</strong
                 ></small
               >
-              <i> Particularizado</i><br /><br />$
-              <small><strong>git push -u origin main</strong></small
-              ><br />$ <small><strong>git push </strong></small> para
-              subsecuentes actualizaciones sino hay cambio de rema.
+              <i> Particularizado</i><br />
+
+              Para ssh el genérico
+              <strong
+                >git remote add origin
+                git@host:username/nom_repositorio.git</strong
+              >
+              <br />
+              <small
+                ><strong
+                  >git remote add origin
+                  git@git-gesmedfam:gesmedfam/sigesmed</strong
+                ></small
+              ><br />
+              <small
+                ><strong
+                  >git remote add origin
+                  git@git-ingl2v2:corptrip/corporacion.git</strong
+                ></small
+              >
+
+              <br />
+              $<small><strong>git push -u origin main</strong></small> <br />$
+              <small><strong>git push </strong></small> para subsecuentes
+              actualizaciones sino hay cambio de rema.
             </p>
             <p>
               Para obtener, jalar o bajar los cambios desde el remoto hacia el
@@ -376,7 +390,7 @@
           <div>
             <pre class="git-pre-wrap"><code>
       git init
-      git add .   <strong>Del working directory hacia el Staging (estado escenificado)</strong> aplicará rastreo (tracked) inicialmente archivos se encuentra untracked (no rastreados)
+      git add .   <strong>Del working directory hacia el Staging (estado escenificado o preparado)</strong> aplicará rastreo (tracked) inicialmente archivos se encuentra untracked (no rastreado)
       <strong># Seleccionar los archivos a mover hacia Index | Staging. No pasan todos solo los cambios que seleccionemos</strong>
       git add file1.txt *.java file2.txt
       git commit -m "Primer commit" <strong>Pasaran los archivos a confirmados (commit)</strong>
@@ -448,7 +462,7 @@
             <pre class="git-pre-wrap"><code>
     # esto es un comentario
     archivo.ext
-    carpeta
+    carpeta/
     /archivo_desde_raiz.ext
     # ignorar todos los archivos con extensión exe 
     *.exe
@@ -479,6 +493,10 @@
     $ git clone https://github.com/nom_usuario/nom_repositorio.git
     # Hace lo mismo pero directorio destino se llamará mylibgit
     $ git clone https://github.com/libgit2/libgit2 mylibgit
+    # Para clonar en base a SSH, el genérico sería:    git clone git@host:username/git-repository
+    $ git clone git@git-gesmedfam:gesmedfam/sigesmed
+    $ git clone git@git-ingl2v2:corptrip/corporacion
+    $ git clone git@git-l2v2blue:ing-l2v2/resumir_git resumenGit
           </strong></code></pre>
           </div>
         </section>
@@ -676,6 +694,7 @@
     git log --pretty=format:"%h - %an, %ar : %s"
           </code></pre>
             <h4>Opciones utiles de --pretty=format</h4>
+            <p>Ubicar el mouse sobre el texto para visualizar la referencia</p>
             <div class="abbr-for-pretty-format">
               <div><abbr data-title="Hash de la confirmación">%H</abbr></div>
               <div>
@@ -693,7 +712,11 @@
               </div>
               <div><abbr data-title="Author name">%an</abbr></div>
               <div><abbr data-title="Author email">%ae</abbr></div>
-              <div><abbr data-title="Fecha de autoría">%ad</abbr></div>
+              <div>
+                <abbr data-title="Fecha de autoría, respeta la opción --date"
+                  >%ad</abbr
+                >
+              </div>
               <div><abbr data-title="Fecha de autoría relativa">%ar</abbr></div>
               <div><abbr data-title="Nombre del confirmador">%cn</abbr></div>
               <div>
