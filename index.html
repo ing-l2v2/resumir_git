@@ -1441,6 +1441,69 @@
     $ git pull
           </code></pre>
           </div>
+          <h3>Creando con usuarios SSH, práctica 2</h3>
+          <div>
+            <pre class="git-pre-wrap"><code>
+    # Ingresar a la carpeta de usuario, crear carpeta .ssh. Abrir gitbach En la ruta c:/users/usuario-expecifico/.ssh y ejecutar
+    ssh-keygen -t ed25519 -C "llvilla@espol.edu.ec" -f git-espol-llvilla
+    ssh-keygen -t ed25519 -C "l2v2.ing@gmail.com" -f git-l2v2ing
+    ssh-keygen -t ed25519 -C "l2v2blue@gmail.com" -f git-l2v2blue
+    ssh-keygen -t ed25519 -C "svilla@live.com.ar" -f git-md-slvg
+    ssh-keygen -t ed25519 -C "sigenmed@outlook.com" -f git-sigenmed
+    ssh-keygen -t ed25519 -C "gesmedfam@gmail.com" -f git-gesmedfam
+    ssh-keygen -t ed25519 -C "ingl2v2@outlook.com" -f git-ingl2v2
+    # En el icono del perfil de github, Setting, SSH and GPG keys, darle en new SSH key. En el título darle un nombre a la clave a crear y copiar desde el contenido del archivo pub generado y pegar
+
+    # Crear un archivo config sin extensión en la ruta c:/users/lvilla/.ssh y agregar los Host como los siguientes
+    Host git-espol-llvilla
+      Hostname github.com
+      IdentityFile ~/.ssh/git-espol-llvilla
+      IdentitiesOnly yes
+      User git
+
+    Host git-l2v2ing
+      Hostname github.com
+      IdentityFile ~/.ssh/git-l2v2ing
+      IdentitiesOnly yes
+      User git
+
+    Host git-md-slvg
+      Hostname github.com
+      IdentityFile ~/.ssh/git-md-slvg
+      IdentitiesOnly yes
+      User git
+
+    Host git-l2v2blue
+      Hostname github.com
+      IdentityFile ~/.ssh/git-l2v2blue
+      IdentitiesOnly yes
+      User git
+    Host git-gesmedfam
+      Hostname github.com
+      IdentityFile ~/.ssh/git-gesmedfam
+      IdentitiesOnly yes
+      User git
+    Host git-sigesmed
+      Hostname github.com
+      IdentityFile ~/.ssh/git-sigesmed
+      IdentitiesOnly yes
+      User git
+    # Repositorio para Corptrip
+    Host git-ingl2v2
+      Hostname github.com
+      IdentityFile ~/.ssh/git-ingl2v2
+      IdentitiesOnly yes
+      User git
+    
+    # Abrir gitbash en la ruta donde reside la aplicación o el clonado
+    $ git init
+    $ git config user.mail "ingl2v2@outlook.com"
+    $ git clone git@git-ingl2v2:corptrip/corporacion
+    $ git clone git@git-l2v2blue:ing-l2v2/resumir_git resumenGit
+    $ git remote add origin git@git-ingl2v2:corptrip/corporacion.git
+    $ git remote add origin git@git-gesmedfam:gesmedfam/sigesmed
+            </code></pre>
+          </div>
         </section>
       </article>
     </main>
